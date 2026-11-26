@@ -1,0 +1,68 @@
+{
+  "name": "cctp-multichain",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Circle CCTP V2 USDC transfers between EVM chains and Solana, in any direction, as an Effect library",
+  "packageManager": "bun@1.4.4",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js"
+    },
+    "./evm": {
+      "types": "./dist/evm/index.d.ts",
+      "import": "./dist/evm/index.js"
+    },
+    "./solana": {
+      "types": "./dist/solana/index.d.ts",
+      "import": "./dist/solana/index.js"
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsc -p tsconfig.build.json",
+    "check": "bun run format:check && bun run lint && bun run typecheck && bun run test && bun run build"
+  },
+  "dependencies": {
+    "buffer": "6.0.3"
+  },
+  "peerDependencies": {
+    "effect": "4.1.5",
+    "viem": "^2.21.0",
+    "@solana/web3.js": "^1.98.0"
+  },
+  "peerDependenciesMeta": {
+    "viem": {
+      "optional": true
+    },
+    "@solana/web3.js": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@effect/vitest": "4.1.5",
+    "@solana/web3.js": "1.99.0",
+    "@types/node": "26.6.11",
+    "@typescript-eslint/eslint-plugin": "8.74.0",
+    "@typescript-eslint/parser": "8.74.0",
+    "effect": "4.1.5",
+    "eslint": "10.15.0",
+    "prettier": "3.10.1",
+    "typescript": "6.0.2",
+    "viem": "2.58.7",
+    "vitest": "5.1.2"
+  }
+}

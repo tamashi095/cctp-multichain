@@ -1,0 +1,352 @@
+{
+  "_comment": "REAL data captured by scripts/capture-fixtures.ts from Circle's Iris (iris-api.circle.com), Base and Solana mainnet. Read-only.",
+  "capturedAt": "2026-11-26T08:06:13.264Z",
+  "baseToEvm": {
+    "sourceDomain": 6,
+    "transactionHash": "0x85e31124ed60aa9ff62cd8923fa3bcaab40389482ba5992b3cef6b291a6df301",
+    "blockNumber": "62441321",
+    "depositor": "0xaec53EfDc5582DC78F52ed4CFa852BFa5BF0C1d3",
+    "iris": {
+      "httpStatus": 200,
+      "body": {
+        "messages": [
+          {
+            "attestation": "0x55ea78a5bb13baaf3a2941f8e40be7854ce04b94c2fe329a89fb5ff0f2cee4e9424e41b111ce5602d1bf10b5d2c3b82b9021aee23556329d219886d42246d6031c07b7a93759ec43cbab14c798066da3f71e3e376bf2d141b537037d0f920dff365fa772878cbc7d57af2834ba06bf77d829cb5e993a9fb35913088f7de26788b31c",
+            "message": "0x000000010000000600000003ee56a3964ffe6963baed1f3df38648e544a0d95adb2ee3bbf6f5dcfb2a30540d00000000000000000000000028b5a0e9c621a5badaa536219b3a228c8168cf5d00000000000000000000000028b5a0e9c621a5badaa536219b3a228c8168cf5d0000000000000000000000000000000000000000000000000000000000000000000003e8000003e800000001000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda0291300000000000000000000000037b14f44a42a6f326135ec0d3cf785ec5d3f6f570000000000000000000000000000000000000000000000000000000011ddc16e000000000000000000000000aec53efdc5582dc78f52ed4cfa852bfa5bf0c1d3000000000000000000000000000000000000000000000000000000000000983700000000000000000000000000000000000000000000000000000000000098360000000000000000000000000000000000000000000000000000000001946fa1",
+            "eventNonce": "0xee56a3964ffe6963baed1f3df38648e544a0d95adb2ee3bbf6f5dcfb2a30540d",
+            "cctpVersion": 2,
+            "status": "complete",
+            "decodedMessage": {
+              "sourceDomain": "6",
+              "destinationDomain": "3",
+              "nonce": "0xee56a3964ffe6963baed1f3df38648e544a0d95adb2ee3bbf6f5dcfb2a30540d",
+              "sender": "0x28b5a0e9c621a5badaa536219b3a228c8168cf5d",
+              "recipient": "0x28b5a0e9c621a5badaa536219b3a228c8168cf5d",
+              "destinationCaller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+              "minFinalityThreshold": "1000",
+              "finalityThresholdExecuted": "1000",
+              "messageBody": "0x00000001000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda0291300000000000000000000000037b14f44a42a6f326135ec0d3cf785ec5d3f6f570000000000000000000000000000000000000000000000000000000011ddc16e000000000000000000000000aec53efdc5582dc78f52ed4cfa852bfa5bf0c1d3000000000000000000000000000000000000000000000000000000000000983700000000000000000000000000000000000000000000000000000000000098360000000000000000000000000000000000000000000000000000000001946fa1",
+              "decodedMessageBody": {
+                "burnToken": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+                "mintRecipient": "0x37b14f44a42a6f326135ec0d3cf785ec5d3f6f57",
+                "amount": "299745646",
+                "messageSender": "0xaec53efdc5582dc78f52ed4cfa852bfa5bf0c1d3",
+                "maxFee": "38967",
+                "feeExecuted": "38966",
+                "expirationBlock": "26505121",
+                "hookData": null
+              },
+              "decodedCctpXMessageBody": null
+            },
+            "delayReason": null,
+            "destinationMintTxHash": "0xbd442d287f96c0562c22b576014e33d390f05ba3a6401eae21c2483545d46b98"
+          }
+        ],
+        "sourceTxHash": "0x85e31124ed60aa9ff62cd8923fa3bcaab40389482ba5992b3cef6b291a6df301"
+      }
+    }
+  },
+  "baseToSolana": {
+    "sourceDomain": 6,
+    "transactionHash": "0x8af4e18e7256830a781fc5b3e0bae48f98e770ba50afabb6ffc474a101f757d2",
+    "blockNumber": "62437528",
+    "depositor": "0x1231DEB6f5749EF6cE6943a275A1D3E7486F4EaE",
+    "iris": {
+      "httpStatus": 200,
+      "body": {
+        "messages": [
+          {
+            "attestation": "0x1d6644151fa2d8c0b7b761373d578ec3188d2257e5745e928eb7a7deafb2b3100f94db408b0f9a3b8617d62d447aaeb0e39258c2b1936505d39034a435ace3a41bbbc1cd944302f7a299bb5551b6e0d8a93b71adfa9a1af24b6c11a4345c1f7df118150322f9c52d1128f355f2a826db9587883df46bff535d7289ba52bb91831c1b",
+            "message": "0x00000001000000060000000512d9f9cbb1e7dfb2b8c8d936b67b457120221bb8e8c7ca1837150e074401817c00000000000000000000000028b5a0e9c621a5badaa536219b3a228c8168cf5da65fc81d0fefa8860cb3b83f089b0224be8a6687b7ae49f594c0b9b4d7e938930000000000000000000000000000000000000000000000000000000000000000000007d0000007d000000001000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda02913f6d24783330ef011ef9e9f71fcd16a108542ef47bbd8a75b6e849153e944c8d70000000000000000000000000000000000000000000000000000000008f4c9200000000000000000000000001231deb6f5749ef6ce6943a275a1d3e7486f4eae000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "eventNonce": "0x12d9f9cbb1e7dfb2b8c8d936b67b457120221bb8e8c7ca1837150e074401817c",
+            "cctpVersion": 2,
+            "status": "complete",
+            "decodedMessage": {
+              "sourceDomain": "6",
+              "destinationDomain": "5",
+              "nonce": "0x12d9f9cbb1e7dfb2b8c8d936b67b457120221bb8e8c7ca1837150e074401817c",
+              "sender": "0x28b5a0e9c621a5badaa536219b3a228c8168cf5d",
+              "recipient": "CCTPV2vPZJS2u2BBsUoscuikbYjnpFmbFsvVuJdgUMQe",
+              "destinationCaller": "11111111111111111111111111111111",
+              "minFinalityThreshold": "2000",
+              "finalityThresholdExecuted": "2000",
+              "messageBody": "0x00000001000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda02913f6d24783330ef011ef9e9f71fcd16a108542ef47bbd8a75b6e849153e944c8d70000000000000000000000000000000000000000000000000000000008f4c9200000000000000000000000001231deb6f5749ef6ce6943a275a1d3e7486f4eae000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "decodedMessageBody": {
+                "burnToken": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+                "mintRecipient": "HcVGR3e8hciTL4HqBKpMtDa46BTXJWh3AYXX8tz7VHNv",
+                "amount": "150260000",
+                "messageSender": "0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae",
+                "maxFee": "0",
+                "feeExecuted": "0",
+                "expirationBlock": "0",
+                "hookData": null
+              },
+              "decodedCctpXMessageBody": null
+            },
+            "delayReason": null,
+            "destinationMintTxHash": "4xHtzGy53Yzv2KVAodMkWwGkLBWCW8aUYz6hcnb7ix2S6ZP5FkVSiDdB1ZXUyZp4HfoyFzHKEmc3HzY9m1ELiB4v"
+          }
+        ],
+        "sourceTxHash": "0x8af4e18e7256830a781fc5b3e0bae48f98e770ba50afabb6ffc474a101f757d2"
+      }
+    }
+  },
+  "solana": {
+    "burn": {
+      "signature": "YAPMBEdageDaMqpTQ2PyobNHXyJ6HbLiX6NqPLxu8JPjztqsBc4dVVPwMT6ZSgVVUw5iK5Qd4i7vfakG6yR95qS",
+      "slot": 474071850,
+      "numRequiredSignatures": 2,
+      "data": "0xd73c3d2e723780b07660eb0a0000000000000000000000000000000000000000ab830fcccb4f20bad23b7669d58cb35a96d57d5a00000000000000000000000000000000000000000000000000000000000000009ecb020000000000e8030000",
+      "accounts": [
+        {
+          "pubkey": "oMcssxWxgooErb8bsRA4QN34VHhvfeEbdDjrwF6WH45",
+          "isSigner": true,
+          "isWritable": true
+        },
+        {
+          "pubkey": "oMcssxWxgooErb8bsRA4QN34VHhvfeEbdDjrwF6WH45",
+          "isSigner": true,
+          "isWritable": true
+        },
+        {
+          "pubkey": "45hzrGLQ2EGo1Ln7QpXjDwb589GDQ9H2aEXXw6ds6BFE",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "BWocXaSJ46XRSnTUA92ffLzLriM7V8tHVLoUnS9HoWQz",
+          "isSigner": false,
+          "isWritable": true
+        },
+        {
+          "pubkey": "5CtkkZwpxLpuYBy1VECx1ptPH5F89YoWgqTuDU7RXnX5",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "W1k5ijkaSTo5iA5zChNpfzcy796fLhkBxfmJuR8W8HU",
+          "isSigner": false,
+          "isWritable": true
+        },
+        {
+          "pubkey": "AawthJCGRmggpfv9MMWV6Jmo9cue4gL9wUZgRBShg58W",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "3EzN2mcmdfSNGXRCAixSpTteK6ywdmFDZZWvkMnznFt9",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "E1bQJ8eMMn3zmeSewW3HQ8zmJr7KR75JonbwAtWx2bux",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "CRBBbuLCyrkQy4dCTHxqstSmDQv4ajBeUVb9qUdMVaP1",
+          "isSigner": false,
+          "isWritable": true
+        },
+        {
+          "pubkey": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "isSigner": false,
+          "isWritable": true
+        },
+        {
+          "pubkey": "Adpf5r1quDud2bq6stGenThnXyJYSzWHX8jcUF2BN1j8",
+          "isSigner": true,
+          "isWritable": true
+        },
+        {
+          "pubkey": "CCTPV2Sm4AdWt5296sk4P66VBZ7bEhcARwFaaS9YPbeC",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "CCTPV2vPZJS2u2BBsUoscuikbYjnpFmbFsvVuJdgUMQe",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "11111111111111111111111111111111",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "6TCCnJ9R1m1RXFzyoH7GYH2J6NJDtZaUvfipPuLWxHNd",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "CCTPV2vPZJS2u2BBsUoscuikbYjnpFmbFsvVuJdgUMQe",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "2PcXTomVAbX5Es1NUZUkxwuCm8tvV4NmRk3fmQWFCWoV",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "CCTPV2Sm4AdWt5296sk4P66VBZ7bEhcARwFaaS9YPbeC",
+          "isSigner": false,
+          "isWritable": false
+        }
+      ],
+      "iris": {
+        "httpStatus": 200,
+        "body": {
+          "messages": [
+            {
+              "attestation": "0x242f5936d8917fa5d8b042fe1f37b58224dfe76a0a4d9d39055fa05b55b937c779977c38c48c047d1907eabb8d135f3b73392e571897d9b4b9c3a7320a30ffc71bd328b156220549f43a68d81f184a0773c8fd26e14dcf5fb2901a0d1b60bfa9b156b91393d477187262f5bb5612e1f33523623d6d79c7e4af4109f9dbfbb1f1de1b",
+              "message": "0x0000000100000005000000008fee0071d5cbf548201a237a0e5602561f4328dd400be972f675d41bd0de4d88a65fc81d0fefa8860cb3b83f089b0224be8a6687b7ae49f594c0b9b4d7e9389300000000000000000000000028b5a0e9c621a5badaa536219b3a228c8168cf5d0000000000000000000000000000000000000000000000000000000000000000000003e8000003e800000001c6fa7af3bedbad3a3d65f36aabc97431b1bbe4c2d2f6e0e47ca60203452f5d61000000000000000000000000ab830fcccb4f20bad23b7669d58cb35a96d57d5a000000000000000000000000000000000000000000000000000000000aeb60760be007dcbcb58d6e1daf55ac86b2a06f9c2f7344d20c823e3dd8706dad609f8a000000000000000000000000000000000000000000000000000000000002cb9e000000000000000000000000000000000000000000000000000000000000478f0000000000000000000000000000000000000000000000000000000001946ff8",
+              "eventNonce": "0x8fee0071d5cbf548201a237a0e5602561f4328dd400be972f675d41bd0de4d88",
+              "cctpVersion": 2,
+              "status": "complete",
+              "decodedMessage": {
+                "sourceDomain": "5",
+                "destinationDomain": "0",
+                "nonce": "0x8fee0071d5cbf548201a237a0e5602561f4328dd400be972f675d41bd0de4d88",
+                "sender": "CCTPV2vPZJS2u2BBsUoscuikbYjnpFmbFsvVuJdgUMQe",
+                "recipient": "0x28b5a0e9c621a5badaa536219b3a228c8168cf5d",
+                "destinationCaller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "minFinalityThreshold": "1000",
+                "finalityThresholdExecuted": "1000",
+                "messageBody": "0x00000001c6fa7af3bedbad3a3d65f36aabc97431b1bbe4c2d2f6e0e47ca60203452f5d61000000000000000000000000ab830fcccb4f20bad23b7669d58cb35a96d57d5a000000000000000000000000000000000000000000000000000000000aeb60760be007dcbcb58d6e1daf55ac86b2a06f9c2f7344d20c823e3dd8706dad609f8a000000000000000000000000000000000000000000000000000000000002cb9e000000000000000000000000000000000000000000000000000000000000478f0000000000000000000000000000000000000000000000000000000001946ff8",
+                "decodedMessageBody": {
+                  "burnToken": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+                  "mintRecipient": "0xab830fcccb4f20bad23b7669d58cb35a96d57d5a",
+                  "amount": "183197814",
+                  "messageSender": "oMcssxWxgooErb8bsRA4QN34VHhvfeEbdDjrwF6WH45",
+                  "maxFee": "183198",
+                  "feeExecuted": "18319",
+                  "expirationBlock": "26505208",
+                  "hookData": null
+                },
+                "decodedCctpXMessageBody": null
+              },
+              "delayReason": null,
+              "destinationMintTxHash": "0x07f1f31a9a3ae4b529f424d612599725d71a8a811e048e782cef14427faa4a8c"
+            }
+          ],
+          "sourceTxHash": "YAPMBEdageDaMqpTQ2PyobNHXyJ6HbLiX6NqPLxu8JPjztqsBc4dVVPwMT6ZSgVVUw5iK5Qd4i7vfakG6yR95qS"
+        }
+      }
+    },
+    "receive": {
+      "signature": "42P7pXqPZGv8Csg188GuumtkMcHuBFUgAewpBkGnkgUxanW89QA1wY7o6bXQe9R6o1exZViuzxiunCPHJHDQFY1E",
+      "slot": 474074841,
+      "numRequiredSignatures": 1,
+      "data": "0x26907fe11fe1ee19780100000000000100000003000000054b7f5cd6e2e8d6422200a8842ca2a9707fda872eb4aa452f6a62ed8b83a504f900000000000000000000000028b5a0e9c621a5badaa536219b3a228c8168cf5da65fc81d0fefa8860cb3b83f089b0224be8a6687b7ae49f594c0b9b4d7e938930000000000000000000000000000000000000000000000000000000000000000000003e8000003e800000001000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e5831285ca3bc7ab9152831f99048330ddd2c9e66fa62b402dd41a9cbae917a910b7b0000000000000000000000000000000000000000000000000000000104d307a10000000000000000000000008e60b7b64b63cd56b18ebcecadcb79b04919286e00000000000000000000000000000000000000000000000000000000000959130000000000000000000000000000000000000000000000000000000000095912000000000000000000000000000000000000000000000000000000001c48660f82000000923668293a26e1d66a6b31be30c0859a56eab1d2b97cddeab39cc78a781d89113acd52c85f5a7d81978bcae449c522162b0c14d2eb82d61939a537a197e50d6e1ce4264660af79372390f301b2d5014f23b188040d40a3d8a2e16e4c6aee6d523538684fc4d4047cf8f58d98f6a8c7f22a3e532e57c1a518c3e201a864795dab051c",
+      "accounts": [
+        {
+          "pubkey": "CsuSBBPk3ZftqRwXprkna9PuctEm6kXyESLsZmURBg85",
+          "isSigner": true,
+          "isWritable": true
+        },
+        {
+          "pubkey": "CsuSBBPk3ZftqRwXprkna9PuctEm6kXyESLsZmURBg85",
+          "isSigner": true,
+          "isWritable": true
+        },
+        {
+          "pubkey": "DsAdX23SVpTPYhKP2ua1mx8gTPqLyzx7a43cyxYjS2up",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "W1k5ijkaSTo5iA5zChNpfzcy796fLhkBxfmJuR8W8HU",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "Pq2u9KHBLzeqzAz4sFu7sKShrVFoHQABn7Bpqpd1KNn",
+          "isSigner": false,
+          "isWritable": true
+        },
+        {
+          "pubkey": "CCTPV2vPZJS2u2BBsUoscuikbYjnpFmbFsvVuJdgUMQe",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "11111111111111111111111111111111",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "2PcXTomVAbX5Es1NUZUkxwuCm8tvV4NmRk3fmQWFCWoV",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "CCTPV2Sm4AdWt5296sk4P66VBZ7bEhcARwFaaS9YPbeC",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "AawthJCGRmggpfv9MMWV6Jmo9cue4gL9wUZgRBShg58W",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "53NSDvEXmUixWSsCQF5rnTxcKdihq19WXNaZFXrX3ojf",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "E1bQJ8eMMn3zmeSewW3HQ8zmJr7KR75JonbwAtWx2bux",
+          "isSigner": false,
+          "isWritable": true
+        },
+        {
+          "pubkey": "CRBBbuLCyrkQy4dCTHxqstSmDQv4ajBeUVb9qUdMVaP1",
+          "isSigner": false,
+          "isWritable": true
+        },
+        {
+          "pubkey": "pUDNiGnQsosQMDmiN1cHUbMnH8JYBB7mEkAbxJ1yeg9",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "6zNSMmZGMhNyqZMHkx2L63DLuqh5qoqBhaQJPJD7Fvt3",
+          "isSigner": false,
+          "isWritable": true
+        },
+        {
+          "pubkey": "3iZErT6EWuuFGhUuHLneBtsLgEinopxahkZFcqTjUSLJ",
+          "isSigner": false,
+          "isWritable": true
+        },
+        {
+          "pubkey": "6xTBTqJMBr5m7BKqVxmW2x11DfqUwtD3TJsqpxELx72L",
+          "isSigner": false,
+          "isWritable": true
+        },
+        {
+          "pubkey": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "6TCCnJ9R1m1RXFzyoH7GYH2J6NJDtZaUvfipPuLWxHNd",
+          "isSigner": false,
+          "isWritable": false
+        },
+        {
+          "pubkey": "CCTPV2vPZJS2u2BBsUoscuikbYjnpFmbFsvVuJdgUMQe",
+          "isSigner": false,
+          "isWritable": false
+        }
+      ],
+      "tokenMessengerData": "0xa204f23493f3dd60627c7f5c2a6823dcb865b0df6643d982a32e39a3a7521921eeaba92db8ae0cae309a1e4d998a9ee475a83cfeb59319bb65c612f5cf65db1d2f423e5b74c03034000000000000000000000000000000000000000000000000000000000000000001000000fe2f3ca18aed35af921db0cdb14fb4237ed9f1f408d4c66e6ee6c7f7cff8e271b1429ad80b7e6818e747aee6e3f52b713e6e0e140b8807c5eaba1c60ca4b018bed00000000"
+    }
+  }
+}

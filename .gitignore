@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Never commit keys, RPC secrets or live-run records.
+.env
+.env.*
+!.env.example
+*.pem
+*-keypair.json
+.transfers/
