@@ -1,0 +1,1726 @@
+{
+  "_comment": "REAL data captured by scripts/capture-sui-fixtures.ts from Sui's public full nodes and Circle's Iris (mainnet and sandbox). Read-only.",
+  "capturedAt": "2026-11-26T08:31:14.466Z",
+  "mainnet": {
+    "chainIdentifier": "4btiuiMPvEENsttpZC7CZ53DruC3MAgfznDbASZ7DR6S",
+    "claim": {
+      "digest": "AjdTFTDgfp3mThQBtM6nPn73srzBquPVBvAjmQUiVKYK",
+      "status": {
+        "success": true,
+        "error": null
+      },
+      "sender": "0xdd9bc1f0ac01fb2edb507df4ebeb59497cd568a080ba8bda1f0bcc6636254950",
+      "inputs": [
+        {
+          "$kind": "Pure",
+          "Pure": {
+            "bytes": "+AIAAAABAAAAAwAAAAieFGE3q1yHb/n2ePhsfkLbjk+VhMudMVlr5GShWeK1dgAAAAAAAAAAAAAAACi1oOnGIaW62qU2IZs6IoyBaM9d9HhCorWsRINzGSenUAF1qTVNLszZQxKqWR7FC56GV+YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB9AAAAfQAAAAAQAAAAAAAAAAAAAAAK+I0GXnfIzCI5Mnxe2zpDImjlgxq06WsbKV650OZl+ATEQvs+qyf0CSicmN+EP786JXJbEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+X/AAAAAAAAAAAAAAAAOqb0cEayzEF366YPRPH9BArvfLeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "$kind": "Pure",
+          "Pure": {
+            "bytes": "ggEj94mSfYleBRFZeeEvfNv1Erg5HRGYIYiYFZnzFdT/xHx3KQMy31eStsViqBrysvahDtNbtykqUJfaMkujcCrEHCrHCWeZo9c5hNJzvk6s2L879WA5n8r/XnSKxrEBsd9Te/uDOOdVWg8lZuqbPTDgGQgMD8oB2LDEXIQTtdE6TJIb"
+          }
+        },
+        {
+          "$kind": "Object",
+          "Object": {
+            "$kind": "SharedObject",
+            "SharedObject": {
+              "objectId": "0x0c067f7d325e5b60e3179712e7783534ba1556cbb3d359d8161497e37689230c",
+              "initialSharedVersion": "824760979",
+              "mutable": true
+            }
+          }
+        },
+        {
+          "$kind": "Object",
+          "Object": {
+            "$kind": "SharedObject",
+            "SharedObject": {
+              "objectId": "0x06fb166941cd7bc095edc019d054a753ec3f1e4c25f28f2ecc4a6cfa0a9b1167",
+              "initialSharedVersion": "824760982",
+              "mutable": false
+            }
+          }
+        },
+        {
+          "$kind": "Object",
+          "Object": {
+            "$kind": "SharedObject",
+            "SharedObject": {
+              "objectId": "0x0000000000000000000000000000000000000000000000000000000000000006",
+              "initialSharedVersion": "1",
+              "mutable": false
+            }
+          }
+        },
+        {
+          "$kind": "Object",
+          "Object": {
+            "$kind": "SharedObject",
+            "SharedObject": {
+              "objectId": "0xa32de8a6dd0178fb05f662929d55cddb69a25c26bde4b83f89e36d17ead94c41",
+              "initialSharedVersion": "824760983",
+              "mutable": false
+            }
+          }
+        },
+        {
+          "$kind": "Object",
+          "Object": {
+            "$kind": "SharedObject",
+            "SharedObject": {
+              "objectId": "0x57d6725e7a8b49a7b2a612f6bd66ab5f39fc95332ca48be421c3229d514a6de7",
+              "initialSharedVersion": "313333795",
+              "mutable": true
+            }
+          }
+        },
+        {
+          "$kind": "Object",
+          "Object": {
+            "$kind": "SharedObject",
+            "SharedObject": {
+              "objectId": "0x0000000000000000000000000000000000000000000000000000000000000403",
+              "initialSharedVersion": "65624845",
+              "mutable": false
+            }
+          }
+        }
+      ],
+      "commands": [
+        {
+          "$kind": "MoveCall",
+          "MoveCall": {
+            "package": "0x16bcfcfc465f96281663a344641c017de84529370e11aa3879d0dce43ad6db87",
+            "module": "receive_message",
+            "function": "receive_message",
+            "typeArguments": [],
+            "arguments": [
+              {
+                "$kind": "Input",
+                "Input": 0
+              },
+              {
+                "$kind": "Input",
+                "Input": 1
+              },
+              {
+                "$kind": "Input",
+                "Input": 2
+              }
+            ]
+          }
+        },
+        {
+          "$kind": "MoveCall",
+          "MoveCall": {
+            "package": "0xeb14978abfe93a37c5d5bf86a0623b923553a5f0e794daac7724f1e2fdbfb830",
+            "module": "handle_receive_message",
+            "function": "prepare_mint",
+            "typeArguments": [
+              "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC"
+            ],
+            "arguments": [
+              {
+                "$kind": "NestedResult",
+                "NestedResult": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "$kind": "Input",
+                "Input": 3
+              },
+              {
+                "$kind": "Input",
+                "Input": 4
+              }
+            ]
+          }
+        },
+        {
+          "$kind": "MoveCall",
+          "MoveCall": {
+            "package": "0x185ed207c4d64fc594882ab927f9f3c6ff957aad03df8a731ba64378faeeb2bf",
+            "module": "handler",
+            "function": "mint",
+            "typeArguments": [],
+            "arguments": [
+              {
+                "$kind": "Input",
+                "Input": 5
+              },
+              {
+                "$kind": "NestedResult",
+                "NestedResult": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "$kind": "Input",
+                "Input": 3
+              },
+              {
+                "$kind": "Input",
+                "Input": 6
+              },
+              {
+                "$kind": "Input",
+                "Input": 7
+              }
+            ]
+          }
+        },
+        {
+          "$kind": "MoveCall",
+          "MoveCall": {
+            "package": "0xeb14978abfe93a37c5d5bf86a0623b923553a5f0e794daac7724f1e2fdbfb830",
+            "module": "handle_receive_message",
+            "function": "complete_mint",
+            "typeArguments": [
+              "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC",
+              "0x185ed207c4d64fc594882ab927f9f3c6ff957aad03df8a731ba64378faeeb2bf::handler::Auth"
+            ],
+            "arguments": [
+              {
+                "$kind": "NestedResult",
+                "NestedResult": [
+                  2,
+                  0
+                ]
+              },
+              {
+                "$kind": "Input",
+                "Input": 3
+              },
+              {
+                "$kind": "Input",
+                "Input": 2
+              }
+            ]
+          }
+        }
+      ],
+      "events": [
+        {
+          "eventType": "0xecf47609d7da919ea98e7fd04f6e0648a0a79b337aaad373fa37aac8febf19c8::treasury::Mint<0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC>",
+          "bcs": "0x51430d2721d4ecf99d68f9c9343c5cd5cd367c8965733230b51ad369478d3c5eab4e96b1b295eb9d0e665f804c442fb3eab27f409289c98df843fbf3a25725b1fc970f0000000000"
+        },
+        {
+          "eventType": "0xeb14978abfe93a37c5d5bf86a0623b923553a5f0e794daac7724f1e2fdbfb830::handle_receive_message::MintAndWithdraw",
+          "bcs": "0xab4e96b1b295eb9d0e665f804c442fb3eab27f409289c98df843fbf3a25725b1fc970f00000000003f2e28d163e25042ac7c9543c15675af5aa5d3c27dbc656a67f37f4293a3fdef0000000000000000"
+        },
+        {
+          "eventType": "0x16bcfcfc465f96281663a344641c017de84529370e11aa3879d0dce43ad6db87::receive_message::MessageReceived",
+          "bcs": "0xdd9bc1f0ac01fb2edb507df4ebeb59497cd568a080ba8bda1f0bcc66362549500300000076b5e259a164e46b59319dcb84954f8edb427e6cf878f6f96f875cab3761149e00000000000000000000000028b5a0e9c621a5badaa536219b3a228c8168cf5dd0070000e40100000001000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e5831ab4e96b1b295eb9d0e665f804c442fb3eab27f409289c98df843fbf3a25725b100000000000000000000000000000000000000000000000000000000000f97fc000000000000000000000000ea9bd1c11acb3105dfae983d13c7f4102bbdf2de000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "message": "0x0000000100000003000000089e146137ab5c876ff9f678f86c7e42db8e4f9584cb9d31596be464a159e2b57600000000000000000000000028b5a0e9c621a5badaa536219b3a228c8168cf5df47842a2b5ac4483731927a7500175a9354d2eccd94312aa591ec50b9e8657e60000000000000000000000000000000000000000000000000000000000000000000007d0000007d000000001000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e5831ab4e96b1b295eb9d0e665f804c442fb3eab27f409289c98df843fbf3a25725b100000000000000000000000000000000000000000000000000000000000f97fc000000000000000000000000ea9bd1c11acb3105dfae983d13c7f4102bbdf2de000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "iris": {
+        "httpStatus": 200,
+        "body": {
+          "messages": [
+            {
+              "attestation": "0x23f789927d895e05115979e12f7cdbf512b8391d11982188981599f315d4ffc47c77290332df5792b6c562a81af2b2f6a10ed35bb7292a5097da324ba3702ac41c2ac7096799a3d73984d273be4eacd8bf3bf560399fcaff5e748ac6b101b1df537bfb8338e7555a0f2566ea9b3d30e019080c0fca01d8b0c45c8413b5d13a4c921b",
+              "message": "0x0000000100000003000000089e146137ab5c876ff9f678f86c7e42db8e4f9584cb9d31596be464a159e2b57600000000000000000000000028b5a0e9c621a5badaa536219b3a228c8168cf5df47842a2b5ac4483731927a7500175a9354d2eccd94312aa591ec50b9e8657e60000000000000000000000000000000000000000000000000000000000000000000007d0000007d000000001000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e5831ab4e96b1b295eb9d0e665f804c442fb3eab27f409289c98df843fbf3a25725b100000000000000000000000000000000000000000000000000000000000f97fc000000000000000000000000ea9bd1c11acb3105dfae983d13c7f4102bbdf2de000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "eventNonce": "0x9e146137ab5c876ff9f678f86c7e42db8e4f9584cb9d31596be464a159e2b576",
+              "cctpVersion": 2,
+              "status": "complete",
+              "decodedMessage": {
+                "sourceDomain": "3",
+                "destinationDomain": "8",
+                "nonce": "0x9e146137ab5c876ff9f678f86c7e42db8e4f9584cb9d31596be464a159e2b576",
+                "sender": "0x28b5a0e9c621a5badaa536219b3a228c8168cf5d",
+                "recipient": "0xf47842a2b5ac4483731927a7500175a9354d2eccd94312aa591ec50b9e8657e6",
+                "destinationCaller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "minFinalityThreshold": "2000",
+                "finalityThresholdExecuted": "2000",
+                "messageBody": "0x00000001000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e5831ab4e96b1b295eb9d0e665f804c442fb3eab27f409289c98df843fbf3a25725b100000000000000000000000000000000000000000000000000000000000f97fc000000000000000000000000ea9bd1c11acb3105dfae983d13c7f4102bbdf2de000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                "decodedMessageBody": {
+                  "burnToken": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
+                  "mintRecipient": "0xab4e96b1b295eb9d0e665f804c442fb3eab27f409289c98df843fbf3a25725b1",
+                  "amount": "1021948",
+                  "messageSender": "0xea9bd1c11acb3105dfae983d13c7f4102bbdf2de",
+                  "maxFee": "0",
+                  "feeExecuted": "0",
+                  "expirationBlock": "0",
+                  "hookData": null
+                },
+                "decodedCctpXMessageBody": null
+              },
+              "delayReason": null,
+              "destinationMintTxHash": "AjdTFTDgfp3mThQBtM6nPn73srzBquPVBvAjmQUiVKYK"
+            }
+          ],
+          "sourceTxHash": "0x2d0f5bb4e1b8929777e9c873c957885ac018d793daaa28082266c7f732aec6a2"
+        }
+      }
+    },
+    "burns": {
+      "toEvm": {
+        "digest": "Dj4B3FNRbA9nV4vmGR9kgaQYU42ku5JMD86he6kAV8dB",
+        "sender": "0xca024a696212db2b1b50f1a1fb80e4f7052dbd787a304c500d94b17310a14d42",
+        "inputs": [
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AgAAAA=="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AAAAAAAAAAAAAAAA3fS2ftRjQTaMmp5Kcj/P7wPovJo="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "0AcAAA=="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AA=="
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0x06fb166941cd7bc095edc019d054a753ec3f1e4c25f28f2ecc4a6cfa0a9b1167",
+                "initialSharedVersion": "824760982",
+                "mutable": false
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0xa32de8a6dd0178fb05f662929d55cddb69a25c26bde4b83f89e36d17ead94c41",
+                "initialSharedVersion": "824760983",
+                "mutable": false
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0x0000000000000000000000000000000000000000000000000000000000000403",
+                "initialSharedVersion": "65624845",
+                "mutable": false
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0x57d6725e7a8b49a7b2a612f6bd66ab5f39fc95332ca48be421c3229d514a6de7",
+                "initialSharedVersion": "313333795",
+                "mutable": true
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0x0c067f7d325e5b60e3179712e7783534ba1556cbb3d359d8161497e37689230c",
+                "initialSharedVersion": "824760979",
+                "mutable": false
+              }
+            }
+          },
+          {
+            "$kind": "FundsWithdrawal",
+            "FundsWithdrawal": {
+              "reservation": {
+                "$kind": "MaxAmountU64",
+                "MaxAmountU64": "15500003317"
+              },
+              "typeArg": {
+                "$kind": "Balance",
+                "Balance": "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC"
+              },
+              "withdrawFrom": {
+                "$kind": "Sender",
+                "Sender": true
+              }
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "9UffmwMAAAA="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "ygJKaWIS2ysbUPGh+4Dk9wUtvXh6MExQDZSxcxChTUI="
+            }
+          }
+        ],
+        "commands": [
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0x0000000000000000000000000000000000000000000000000000000000000002",
+              "module": "coin",
+              "function": "redeem_funds",
+              "typeArguments": [
+                "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC"
+              ],
+              "arguments": [
+                {
+                  "$kind": "Input",
+                  "Input": 11
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "SplitCoins",
+            "SplitCoins": {
+              "coin": {
+                "$kind": "Result",
+                "Result": 0
+              },
+              "amounts": [
+                {
+                  "$kind": "Input",
+                  "Input": 12
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0x0000000000000000000000000000000000000000000000000000000000000002",
+              "module": "coin",
+              "function": "send_funds",
+              "typeArguments": [
+                "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC"
+              ],
+              "arguments": [
+                {
+                  "$kind": "Result",
+                  "Result": 0
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 13
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0xeb14978abfe93a37c5d5bf86a0623b923553a5f0e794daac7724f1e2fdbfb830",
+              "module": "deposit_for_burn",
+              "function": "deposit_for_burn",
+              "typeArguments": [
+                "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC"
+              ],
+              "arguments": [
+                {
+                  "$kind": "NestedResult",
+                  "NestedResult": [
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 0
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 1
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 2
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 3
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 4
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 5
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 6
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0x185ed207c4d64fc594882ab927f9f3c6ff957aad03df8a731ba64378faeeb2bf",
+              "module": "handler",
+              "function": "burn",
+              "typeArguments": [],
+              "arguments": [
+                {
+                  "$kind": "Input",
+                  "Input": 7
+                },
+                {
+                  "$kind": "NestedResult",
+                  "NestedResult": [
+                    3,
+                    0
+                  ]
+                },
+                {
+                  "$kind": "NestedResult",
+                  "NestedResult": [
+                    3,
+                    1
+                  ]
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 8
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 9
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0xeb14978abfe93a37c5d5bf86a0623b923553a5f0e794daac7724f1e2fdbfb830",
+              "module": "deposit_for_burn",
+              "function": "complete_burn",
+              "typeArguments": [
+                "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC",
+                "0x185ed207c4d64fc594882ab927f9f3c6ff957aad03df8a731ba64378faeeb2bf::handler::Auth"
+              ],
+              "arguments": [
+                {
+                  "$kind": "NestedResult",
+                  "NestedResult": [
+                    4,
+                    0
+                  ]
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 6
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 10
+                }
+              ]
+            }
+          }
+        ],
+        "event": {
+          "eventType": "0xeb14978abfe93a37c5d5bf86a0623b923553a5f0e794daac7724f1e2fdbfb830::deposit_for_burn::DepositForBurn",
+          "bcs": "0x3f2e28d163e25042ac7c9543c15675af5aa5d3c27dbc656a67f37f4293a3fdeff547df9b03000000000000000000000000000000000000000000000000000000ca024a696212db2b1b50f1a1fb80e4f7052dbd787a304c500d94b17310a14d42000000000000000000000000ddf4b67ed46341368c9a9e4a723fcfef03e8bc9a0200000000000000000000000000000028b5a0e9c621a5badaa536219b3a228c8168cf5d00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d007000000"
+        },
+        "iris": {
+          "httpStatus": 200,
+          "body": {
+            "messages": [
+              {
+                "attestation": "0xc5fff5400ad54aca3415944de3a0ca5037db20c5882637ebe2a50800c89a9059415b14b1f5621066601be2d079f01c9397f6ff2dc26826b8a6a4242c0880cc361ca952f80d2915994a0fa8d0dfd14618c618ef496a688e19ef644b76f720c8f0ba59fcc580a8abc921ca13e428cb824dcb5527bb35daf52e6993f6666acee2154f1b",
+                "message": "0x000000010000000800000002b46e6650561c6ba98e391aba3d0ff4b73dc47f5d104db56cf7d8c7fec7d660dff47842a2b5ac4483731927a7500175a9354d2eccd94312aa591ec50b9e8657e600000000000000000000000028b5a0e9c621a5badaa536219b3a228c8168cf5d0000000000000000000000000000000000000000000000000000000000000000000007d0000007d0000000013f2e28d163e25042ac7c9543c15675af5aa5d3c27dbc656a67f37f4293a3fdef000000000000000000000000ddf4b67ed46341368c9a9e4a723fcfef03e8bc9a000000000000000000000000000000000000000000000000000000039bdf47f5ca024a696212db2b1b50f1a1fb80e4f7052dbd787a304c500d94b17310a14d42000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                "eventNonce": "0xb46e6650561c6ba98e391aba3d0ff4b73dc47f5d104db56cf7d8c7fec7d660df",
+                "cctpVersion": 2,
+                "status": "complete",
+                "decodedMessage": {
+                  "sourceDomain": "8",
+                  "destinationDomain": "2",
+                  "nonce": "0xb46e6650561c6ba98e391aba3d0ff4b73dc47f5d104db56cf7d8c7fec7d660df",
+                  "sender": "0xf47842a2b5ac4483731927a7500175a9354d2eccd94312aa591ec50b9e8657e6",
+                  "recipient": "0x28b5a0e9c621a5badaa536219b3a228c8168cf5d",
+                  "destinationCaller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                  "minFinalityThreshold": "2000",
+                  "finalityThresholdExecuted": "2000",
+                  "messageBody": "0x000000013f2e28d163e25042ac7c9543c15675af5aa5d3c27dbc656a67f37f4293a3fdef000000000000000000000000ddf4b67ed46341368c9a9e4a723fcfef03e8bc9a000000000000000000000000000000000000000000000000000000039bdf47f5ca024a696212db2b1b50f1a1fb80e4f7052dbd787a304c500d94b17310a14d42000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                  "decodedMessageBody": {
+                    "burnToken": "0x3f2e28d163e25042ac7c9543c15675af5aa5d3c27dbc656a67f37f4293a3fdef",
+                    "mintRecipient": "0xddf4b67ed46341368c9a9e4a723fcfef03e8bc9a",
+                    "amount": "15500003317",
+                    "messageSender": "0xca024a696212db2b1b50f1a1fb80e4f7052dbd787a304c500d94b17310a14d42",
+                    "maxFee": "0",
+                    "feeExecuted": "0",
+                    "expirationBlock": "0",
+                    "hookData": null
+                  },
+                  "decodedCctpXMessageBody": null
+                },
+                "delayReason": null,
+                "destinationMintTxHash": "0x03c9a96810cf384b31ebe84e71c25f9336db868638a84b0c50964ae3e3dae6f4"
+              }
+            ],
+            "sourceTxHash": "Dj4B3FNRbA9nV4vmGR9kgaQYU42ku5JMD86he6kAV8dB"
+          }
+        }
+      },
+      "toSolana": {
+        "digest": "9RFMTaCYK3QA4QMz7VtSsbmetQi7vinm3gqEVUscXtM2",
+        "sender": "0xf3dd55ef1f50537addf150eb8dec64842c19d9d132c51670c3beee2c7dcc5b16",
+        "inputs": [
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "BQAAAA=="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "UiJmaS9//hFMvvpaC5oM+JZZ5uKtPTEDNU5mPjJOSA4="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "0AcAAA=="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AA=="
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0x06fb166941cd7bc095edc019d054a753ec3f1e4c25f28f2ecc4a6cfa0a9b1167",
+                "initialSharedVersion": "824760982",
+                "mutable": false
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0xa32de8a6dd0178fb05f662929d55cddb69a25c26bde4b83f89e36d17ead94c41",
+                "initialSharedVersion": "824760983",
+                "mutable": false
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0x0000000000000000000000000000000000000000000000000000000000000403",
+                "initialSharedVersion": "65624845",
+                "mutable": false
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0x57d6725e7a8b49a7b2a612f6bd66ab5f39fc95332ca48be421c3229d514a6de7",
+                "initialSharedVersion": "313333795",
+                "mutable": true
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0x0c067f7d325e5b60e3179712e7783534ba1556cbb3d359d8161497e37689230c",
+                "initialSharedVersion": "824760979",
+                "mutable": false
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "ImmOrOwnedObject",
+              "ImmOrOwnedObject": {
+                "objectId": "0xad11229989e430493e0bb8cbaf2e988c20d89111d355f1b5108a777b469a7919",
+                "version": "1063550700",
+                "digest": "AqgWWY1uXd3sRLv6BLswn2Fn2Xbu3F6uUSuzysCEcAZu"
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "ImmOrOwnedObject",
+              "ImmOrOwnedObject": {
+                "objectId": "0x180372890983b282a5cc98caad8ea6d6e1c705fccf97def7b1c5ff07fcbf4885",
+                "version": "1019977385",
+                "digest": "8REDvSYm3xMmFtefuyUhCzTLK7Dsapmivmzb93E44RtW"
+              }
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "YDQ8AgAAAAA="
+            }
+          }
+        ],
+        "commands": [
+          {
+            "$kind": "MergeCoins",
+            "MergeCoins": {
+              "destination": {
+                "$kind": "Input",
+                "Input": 11
+              },
+              "sources": [
+                {
+                  "$kind": "Input",
+                  "Input": 12
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "SplitCoins",
+            "SplitCoins": {
+              "coin": {
+                "$kind": "Input",
+                "Input": 11
+              },
+              "amounts": [
+                {
+                  "$kind": "Input",
+                  "Input": 13
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0xeb14978abfe93a37c5d5bf86a0623b923553a5f0e794daac7724f1e2fdbfb830",
+              "module": "deposit_for_burn",
+              "function": "deposit_for_burn",
+              "typeArguments": [
+                "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC"
+              ],
+              "arguments": [
+                {
+                  "$kind": "NestedResult",
+                  "NestedResult": [
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 0
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 1
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 2
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 3
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 4
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 5
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 6
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0x185ed207c4d64fc594882ab927f9f3c6ff957aad03df8a731ba64378faeeb2bf",
+              "module": "handler",
+              "function": "burn",
+              "typeArguments": [],
+              "arguments": [
+                {
+                  "$kind": "Input",
+                  "Input": 7
+                },
+                {
+                  "$kind": "NestedResult",
+                  "NestedResult": [
+                    2,
+                    0
+                  ]
+                },
+                {
+                  "$kind": "NestedResult",
+                  "NestedResult": [
+                    2,
+                    1
+                  ]
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 8
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 9
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0xeb14978abfe93a37c5d5bf86a0623b923553a5f0e794daac7724f1e2fdbfb830",
+              "module": "deposit_for_burn",
+              "function": "complete_burn",
+              "typeArguments": [
+                "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC",
+                "0x185ed207c4d64fc594882ab927f9f3c6ff957aad03df8a731ba64378faeeb2bf::handler::Auth"
+              ],
+              "arguments": [
+                {
+                  "$kind": "NestedResult",
+                  "NestedResult": [
+                    3,
+                    0
+                  ]
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 6
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 10
+                }
+              ]
+            }
+          }
+        ],
+        "event": {
+          "eventType": "0xeb14978abfe93a37c5d5bf86a0623b923553a5f0e794daac7724f1e2fdbfb830::deposit_for_burn::DepositForBurn",
+          "bcs": "0x3f2e28d163e25042ac7c9543c15675af5aa5d3c27dbc656a67f37f4293a3fdef60343c0200000000000000000000000000000000000000000000000000000000f3dd55ef1f50537addf150eb8dec64842c19d9d132c51670c3beee2c7dcc5b16522266692f7ffe114cbefa5a0b9a0cf89659e6e2ad3d3103354e663e324e480e05000000a65fc81d0fefa8860cb3b83f089b0224be8a6687b7ae49f594c0b9b4d7e9389300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d007000000"
+        },
+        "iris": {
+          "httpStatus": 200,
+          "body": {
+            "messages": [
+              {
+                "attestation": "0x8d534489f68cf3716eaf0ff986e7b45121ea59179da15a06603b571bc0f9af5711120126e6b3b96ef37ffcf49ee001ae3390d13908159589591de0911146be271bb2b001e752c8cb137ade2c9daf0c6b80fbd9160a72e8b3b438ef6ab1d6fef69a4c8c70a34d1cee5d04b5e319795df86747ff3bf4641ac4398a40639fd1452fb31b",
+                "message": "0x0000000100000008000000058286fcb910b3ff2f02c94b29d8fc13103459b811a6799e16b21ddae0ce1ea3a7f47842a2b5ac4483731927a7500175a9354d2eccd94312aa591ec50b9e8657e6a65fc81d0fefa8860cb3b83f089b0224be8a6687b7ae49f594c0b9b4d7e938930000000000000000000000000000000000000000000000000000000000000000000007d0000007d0000000013f2e28d163e25042ac7c9543c15675af5aa5d3c27dbc656a67f37f4293a3fdef522266692f7ffe114cbefa5a0b9a0cf89659e6e2ad3d3103354e663e324e480e00000000000000000000000000000000000000000000000000000000023c3460f3dd55ef1f50537addf150eb8dec64842c19d9d132c51670c3beee2c7dcc5b16000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                "eventNonce": "0x8286fcb910b3ff2f02c94b29d8fc13103459b811a6799e16b21ddae0ce1ea3a7",
+                "cctpVersion": 2,
+                "status": "complete",
+                "decodedMessage": {
+                  "sourceDomain": "8",
+                  "destinationDomain": "5",
+                  "nonce": "0x8286fcb910b3ff2f02c94b29d8fc13103459b811a6799e16b21ddae0ce1ea3a7",
+                  "sender": "0xf47842a2b5ac4483731927a7500175a9354d2eccd94312aa591ec50b9e8657e6",
+                  "recipient": "CCTPV2vPZJS2u2BBsUoscuikbYjnpFmbFsvVuJdgUMQe",
+                  "destinationCaller": "11111111111111111111111111111111",
+                  "minFinalityThreshold": "2000",
+                  "finalityThresholdExecuted": "2000",
+                  "messageBody": "0x000000013f2e28d163e25042ac7c9543c15675af5aa5d3c27dbc656a67f37f4293a3fdef522266692f7ffe114cbefa5a0b9a0cf89659e6e2ad3d3103354e663e324e480e00000000000000000000000000000000000000000000000000000000023c3460f3dd55ef1f50537addf150eb8dec64842c19d9d132c51670c3beee2c7dcc5b16000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                  "decodedMessageBody": {
+                    "burnToken": "0x3f2e28d163e25042ac7c9543c15675af5aa5d3c27dbc656a67f37f4293a3fdef",
+                    "mintRecipient": "6XcraWUWScxChLzXqz8wTd2PvWWtArbjzQT3TCigMJjw",
+                    "amount": "37500000",
+                    "messageSender": "0xf3dd55ef1f50537addf150eb8dec64842c19d9d132c51670c3beee2c7dcc5b16",
+                    "maxFee": "0",
+                    "feeExecuted": "0",
+                    "expirationBlock": "0",
+                    "hookData": null
+                  },
+                  "decodedCctpXMessageBody": null
+                },
+                "delayReason": null,
+                "destinationMintTxHash": "5cDPZdJMGx47wxvvMLbirBULEqKxAVExNn87AswbaNk2sGh1cV24dvTB7MSBfDmP445qtVUhgo5PFcgQb1DF71pN"
+              }
+            ],
+            "sourceTxHash": "9RFMTaCYK3QA4QMz7VtSsbmetQi7vinm3gqEVUscXtM2"
+          }
+        }
+      }
+    }
+  },
+  "testnet": {
+    "chainIdentifier": "69WiPg3DAQiwdxfncX6wYQ2siKwAe6L9BZthQea3JNMD",
+    "claim": {
+      "digest": "Dkh1EMeeJSq2ni8A4MTyGkazPQmajfKGM3mGpH3htERy",
+      "status": {
+        "success": true,
+        "error": null
+      },
+      "sender": "0x5f5b29d2bb803b5c00238feeab36a472f39ec2a074f9681b824ec66d8405f0e7",
+      "inputs": [
+        {
+          "$kind": "Pure",
+          "Pure": {
+            "bytes": "+AIAAAABAAAABgAAAAh9S7h/EK8UlqRka1w2FjCRfk4gUg1dghg3P+TtDfM25QAAAAAAAAAAAAAAAI/muZncaAzP3Vv36wl0IYviVC2q4+Vn9dNZgCJWO+Ge6doJtscZBADOSOYVWocuVp+eelEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+gAAAPoAAAAAQAAAAAAAAAAAAAAAANsvVOELFQmY055KVQewjGPPc9+4WQYkkW9FFnCUp5YZwMWgdh9sDqu63BVccYwsYdpKX8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA27oAAAAAAAAAAAAAAAABxACT0x2cvH03N+/iKoFKWGLdxmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaIaLZVZ"
+          }
+        },
+        {
+          "$kind": "Pure",
+          "Pure": {
+            "bytes": "ggEVeSL1AGk98fryTS0nVuXGCpMNUDeNQy+yXMQdMPjgjBIZ7Ha+4de9v0zBwVa9xH9CZIBGdzGCL1OIeEnDtbFGG2t1yucKrH7zEz7eRucb9+hYNRy+LJ+7kGjROIOnyW+EKiUaJO0XOW/tvuY65JYyj3h+iXYNLk7dyg94Rrg1+N0c"
+          }
+        },
+        {
+          "$kind": "Object",
+          "Object": {
+            "$kind": "SharedObject",
+            "SharedObject": {
+              "objectId": "0xfee3a2b47f9ef2de2405fc63d79194307945f8ea768815cfc46083bc20fbe6ed",
+              "initialSharedVersion": "1016313036",
+              "mutable": true
+            }
+          }
+        },
+        {
+          "$kind": "Object",
+          "Object": {
+            "$kind": "SharedObject",
+            "SharedObject": {
+              "objectId": "0x72cb55cd14d01e6361386d6ea93eecda9fa1efc3c202b8dd69c1e4683e4c0ca0",
+              "initialSharedVersion": "1016313039",
+              "mutable": false
+            }
+          }
+        },
+        {
+          "$kind": "Object",
+          "Object": {
+            "$kind": "SharedObject",
+            "SharedObject": {
+              "objectId": "0x0000000000000000000000000000000000000000000000000000000000000006",
+              "initialSharedVersion": "1",
+              "mutable": false
+            }
+          }
+        },
+        {
+          "$kind": "Object",
+          "Object": {
+            "$kind": "SharedObject",
+            "SharedObject": {
+              "objectId": "0xfbd9c0517c4f0e1817445ee2be598806e3c392a465d7e3d773d1055f3f0eed32",
+              "initialSharedVersion": "1016313040",
+              "mutable": false
+            }
+          }
+        },
+        {
+          "$kind": "Object",
+          "Object": {
+            "$kind": "SharedObject",
+            "SharedObject": {
+              "objectId": "0x7170137d4a6431bf83351ac025baf462909bffe2877d87716374fb42b9629ebe",
+              "initialSharedVersion": "68036267",
+              "mutable": true
+            }
+          }
+        },
+        {
+          "$kind": "Object",
+          "Object": {
+            "$kind": "SharedObject",
+            "SharedObject": {
+              "objectId": "0x0000000000000000000000000000000000000000000000000000000000000403",
+              "initialSharedVersion": "22257037",
+              "mutable": false
+            }
+          }
+        }
+      ],
+      "commands": [
+        {
+          "$kind": "MoveCall",
+          "MoveCall": {
+            "package": "0xe9678cd42a81886e18e21361088071f275105636a4d3751e1d7f255211f73bbe",
+            "module": "receive_message",
+            "function": "receive_message",
+            "typeArguments": [],
+            "arguments": [
+              {
+                "$kind": "Input",
+                "Input": 0
+              },
+              {
+                "$kind": "Input",
+                "Input": 1
+              },
+              {
+                "$kind": "Input",
+                "Input": 2
+              }
+            ]
+          }
+        },
+        {
+          "$kind": "MoveCall",
+          "MoveCall": {
+            "package": "0x267d3c0cb776eace2840f27e4d33da9c6d952f9749403f1fe6579f4962ed3c64",
+            "module": "handle_receive_message",
+            "function": "prepare_mint",
+            "typeArguments": [
+              "0xa1ec7fc00a6f40db9693ad1415d0c193ad3906494428cf252621037bd7117e29::usdc::USDC"
+            ],
+            "arguments": [
+              {
+                "$kind": "NestedResult",
+                "NestedResult": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "$kind": "Input",
+                "Input": 3
+              },
+              {
+                "$kind": "Input",
+                "Input": 4
+              }
+            ]
+          }
+        },
+        {
+          "$kind": "MoveCall",
+          "MoveCall": {
+            "package": "0xbe8479044396a45e07de2c7f14789c35b8338406eebc53b2527da56839a91561",
+            "module": "handler",
+            "function": "mint",
+            "typeArguments": [],
+            "arguments": [
+              {
+                "$kind": "Input",
+                "Input": 5
+              },
+              {
+                "$kind": "NestedResult",
+                "NestedResult": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "$kind": "Input",
+                "Input": 3
+              },
+              {
+                "$kind": "Input",
+                "Input": 6
+              },
+              {
+                "$kind": "Input",
+                "Input": 7
+              }
+            ]
+          }
+        },
+        {
+          "$kind": "MoveCall",
+          "MoveCall": {
+            "package": "0x267d3c0cb776eace2840f27e4d33da9c6d952f9749403f1fe6579f4962ed3c64",
+            "module": "handle_receive_message",
+            "function": "complete_mint",
+            "typeArguments": [
+              "0xa1ec7fc00a6f40db9693ad1415d0c193ad3906494428cf252621037bd7117e29::usdc::USDC",
+              "0xbe8479044396a45e07de2c7f14789c35b8338406eebc53b2527da56839a91561::handler::Auth"
+            ],
+            "arguments": [
+              {
+                "$kind": "NestedResult",
+                "NestedResult": [
+                  2,
+                  0
+                ]
+              },
+              {
+                "$kind": "Input",
+                "Input": 3
+              },
+              {
+                "$kind": "Input",
+                "Input": 2
+              }
+            ]
+          }
+        }
+      ],
+      "events": [
+        {
+          "eventType": "0x346e3233f61eb0055713417bfaddda7dc3bf26816faad1f7606994a368b92917::treasury::Mint<0xa1ec7fc00a6f40db9693ad1415d0c193ad3906494428cf252621037bd7117e29::usdc::USDC>",
+          "bcs": "0xdfc073820b21ba3293d35b583ee0375929380f8210a2fcd9a6d52461cf59ccdfe164189245bd1459c2529e5867031681d87db03aaeeb705571c630b18769297f46bb0d0000000000"
+        },
+        {
+          "eventType": "0x346e3233f61eb0055713417bfaddda7dc3bf26816faad1f7606994a368b92917::treasury::Mint<0xa1ec7fc00a6f40db9693ad1415d0c193ad3906494428cf252621037bd7117e29::usdc::USDC>",
+          "bcs": "0xdfc073820b21ba3293d35b583ee0375929380f8210a2fcd9a6d52461cf59ccdf1a4eb71e1c0146ea91fef4ac70a8d8399424b237974ebd364e19748ef22d0bf45a00000000000000"
+        },
+        {
+          "eventType": "0x267d3c0cb776eace2840f27e4d33da9c6d952f9749403f1fe6579f4962ed3c64::handle_receive_message::MintAndWithdraw",
+          "bcs": "0xe164189245bd1459c2529e5867031681d87db03aaeeb705571c630b18769297f46bb0d0000000000ba0aeb4444ae728084b1536f72ce7f6424c5e59a1d63b7c3af70e9bff3ed38235a00000000000000"
+        },
+        {
+          "eventType": "0xe9678cd42a81886e18e21361088071f275105636a4d3751e1d7f255211f73bbe::receive_message::MessageReceived",
+          "bcs": "0x5f5b29d2bb803b5c00238feeab36a472f39ec2a074f9681b824ec66d8405f0e706000000e536f30dede43f3718825d0d52204e7e913016365c6b64a49614af107fb84b7d0000000000000000000000008fe6b999dc680ccfdd5bf7eb0974218be2542daae8030000e40100000001000000000000000000000000036cbd53842c5426634e7929541ec2318f3dcf7ee164189245bd1459c2529e5867031681d87db03aaeeb705571c630b18769297f00000000000000000000000000000000000000000000000000000000000dbba00000000000000000000000001c40093d31d9cbc7d3737efe22a814a5862ddc6600000000000000000000000000000000000000000000000000000000000001c2000000000000000000000000000000000000000000000000000000000000005a000000000000000000000000000000000000000000000000000001a21a2d9559"
+        }
+      ],
+      "message": "0x0000000100000006000000087d4bb87f10af1496a4646b5c361630917e4e20520d5d8218373fe4ed0df336e50000000000000000000000008fe6b999dc680ccfdd5bf7eb0974218be2542daae3e567f5d3598022563be19ee9da09b6c7190400ce48e6155a872e569f9e7a510000000000000000000000000000000000000000000000000000000000000000000003e8000003e800000001000000000000000000000000036cbd53842c5426634e7929541ec2318f3dcf7ee164189245bd1459c2529e5867031681d87db03aaeeb705571c630b18769297f00000000000000000000000000000000000000000000000000000000000dbba00000000000000000000000001c40093d31d9cbc7d3737efe22a814a5862ddc6600000000000000000000000000000000000000000000000000000000000001c2000000000000000000000000000000000000000000000000000000000000005a000000000000000000000000000000000000000000000000000001a21a2d9559",
+      "iris": {
+        "httpStatus": 200,
+        "body": {
+          "messages": [
+            {
+              "attestation": "0x157922f500693df1faf24d2d2756e5c60a930d50378d432fb25cc41d30f8e08c1219ec76bee1d7bdbf4cc1c156bdc47f426480467731822f53887849c3b5b1461b6b75cae70aac7ef3133ede46e71bf7e858351cbe2c9fbb9068d13883a7c96f842a251a24ed17396fedbee63ae496328f787e89760d2e4eddca0f7846b835f8dd1c",
+              "message": "0x0000000100000006000000087d4bb87f10af1496a4646b5c361630917e4e20520d5d8218373fe4ed0df336e50000000000000000000000008fe6b999dc680ccfdd5bf7eb0974218be2542daae3e567f5d3598022563be19ee9da09b6c7190400ce48e6155a872e569f9e7a510000000000000000000000000000000000000000000000000000000000000000000003e8000003e800000001000000000000000000000000036cbd53842c5426634e7929541ec2318f3dcf7ee164189245bd1459c2529e5867031681d87db03aaeeb705571c630b18769297f00000000000000000000000000000000000000000000000000000000000dbba00000000000000000000000001c40093d31d9cbc7d3737efe22a814a5862ddc6600000000000000000000000000000000000000000000000000000000000001c2000000000000000000000000000000000000000000000000000000000000005a000000000000000000000000000000000000000000000000000001a21a2d9559",
+              "eventNonce": "0x7d4bb87f10af1496a4646b5c361630917e4e20520d5d8218373fe4ed0df336e5",
+              "cctpVersion": 2,
+              "status": "complete",
+              "decodedMessage": {
+                "sourceDomain": "6",
+                "destinationDomain": "8",
+                "nonce": "0x7d4bb87f10af1496a4646b5c361630917e4e20520d5d8218373fe4ed0df336e5",
+                "sender": "0x8fe6b999dc680ccfdd5bf7eb0974218be2542daa",
+                "recipient": "0xe3e567f5d3598022563be19ee9da09b6c7190400ce48e6155a872e569f9e7a51",
+                "destinationCaller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "minFinalityThreshold": "1000",
+                "finalityThresholdExecuted": "1000",
+                "messageBody": "0x00000001000000000000000000000000036cbd53842c5426634e7929541ec2318f3dcf7ee164189245bd1459c2529e5867031681d87db03aaeeb705571c630b18769297f00000000000000000000000000000000000000000000000000000000000dbba00000000000000000000000001c40093d31d9cbc7d3737efe22a814a5862ddc6600000000000000000000000000000000000000000000000000000000000001c2000000000000000000000000000000000000000000000000000000000000005a000000000000000000000000000000000000000000000000000001a21a2d9559",
+                "decodedMessageBody": {
+                  "burnToken": "0x036cbd53842c5426634e7929541ec2318f3dcf7e",
+                  "mintRecipient": "0xe164189245bd1459c2529e5867031681d87db03aaeeb705571c630b18769297f",
+                  "amount": "900000",
+                  "messageSender": "0x1c40093d31d9cbc7d3737efe22a814a5862ddc66",
+                  "maxFee": "450",
+                  "feeExecuted": "90",
+                  "expirationBlock": "1795735524697",
+                  "hookData": null
+                },
+                "decodedCctpXMessageBody": null
+              },
+              "delayReason": null,
+              "destinationMintTxHash": "Dkh1EMeeJSq2ni8A4MTyGkazPQmajfKGM3mGpH3htERy"
+            }
+          ],
+          "sourceTxHash": "0x84d73c6310ae06b7fc16709c86fecb1b38afdf97c3d88d730aeb6ee092207758"
+        }
+      }
+    },
+    "burnsError": "RpcError: requested data below earliest available; lowest available checkpoint is 405393230\n\nCode: OUT_OF_RANGE\nMethod: sui.rpc.v2.LedgerService/ListEvents\n\nMeta:\n  grpc-status-details-bin: CAsSUXJlcX",
+    "burns": {
+      "toEvm": {
+        "digest": "74maVesBKFHemwCYDSXiAbJmKrq188d4dyBEqJ1iKRn5",
+        "sender": "0xf64c0c61d5742c1ce86d1632e5d857fac1f2bf166f19c5a7fa13b30ea5089f01",
+        "inputs": [
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0xf5b66b76267cd69112805a78c2c1802541723936045fe868231650ce4a2ac528",
+                "initialSharedVersion": "1054770711",
+                "mutable": true
+              }
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "IBf3Cs5CTNq/n4ibDXI1Opi+7qZwdgC3jwVe2nKTMpwL"
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AQ=="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "IPZMDGHVdCwc6G0WMuXYV/rB8r8WbxnFp/oTsw6lCJ8B"
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AA=="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "FL57P5p/Fl8EOlgbZOgnUQE86zpt"
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "NEoBAAAAAAA="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "FHx1im1X87xIVbZ+LT2d0Zh68JwB"
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "wM9qAAAAAAA="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "QBVD+6EBAAA="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "ASBFzvknxXORqgNaG/jBkwafc3FXYiDv760sP3Ks+StMPw=="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AA=="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AAAAAAAAAAA="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AAAAAAAAAAA="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AA=="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AA=="
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0x0000000000000000000000000000000000000000000000000000000000000006",
+                "initialSharedVersion": "1",
+                "mutable": false
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "ImmOrOwnedObject",
+              "ImmOrOwnedObject": {
+                "objectId": "0x8cd59c20e8f8d2ccec08315ec09299dde882f8eac58fa174f971edebc1e2241b",
+                "version": "1082668169",
+                "digest": "8zSnDiPqPvtZMDWXffQ7EwpA4AGiap4EEjCNCgg64oUm"
+              }
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "wM9qAAAAAAA="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "BgAAAA=="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AAAAAAAAAAAAAAAAfHWKbVfzvEhVtn4tPZ3RmHrwnAE="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AAAAAAAAAAAAAAAACnIy6OWzXRf0RO21D+t642l18qo="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "0AcAAA=="
+            }
+          },
+          {
+            "$kind": "Pure",
+            "Pure": {
+              "bytes": "wAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUo0F/cKzkJM2r+fiJsNcjU6mL7upnB2ALePBV7acpMynAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgCY02pZjgDw3mb6TDc2UD8hJvaQUvuKKB27AAgaUsU2hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFzvknxXORqgNaG/jBkwafc3FXYiDv760sP3Ks+StMP8jyAcw4mEuCA8gA+Cl8pX0oFnvFRHbxDhC+/ReOrl/aiZOpDZfKIpPfJkIzTA8Ha6SWmwHBEeHl9dGemENfWyMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAawDVyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAADbL1ThCxUJmNOeSlUHsIxjz3PfgAAAAAAAAAAAAAAAJTMCqxTXM2zwB1nh9ZBPHOa4SvEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABqz8AAAAAAAAAAAAAAAABCAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAJTMCqxTXM2zwB1nh9ZBPHOa4SvEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABk2rV7GcGs="
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0x72cb55cd14d01e6361386d6ea93eecda9fa1efc3c202b8dd69c1e4683e4c0ca0",
+                "initialSharedVersion": "1016313039",
+                "mutable": false
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0xfbd9c0517c4f0e1817445ee2be598806e3c392a465d7e3d773d1055f3f0eed32",
+                "initialSharedVersion": "1016313040",
+                "mutable": false
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0x0000000000000000000000000000000000000000000000000000000000000403",
+                "initialSharedVersion": "22257037",
+                "mutable": false
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0x7170137d4a6431bf83351ac025baf462909bffe2877d87716374fb42b9629ebe",
+                "initialSharedVersion": "68036267",
+                "mutable": true
+              }
+            }
+          },
+          {
+            "$kind": "Object",
+            "Object": {
+              "$kind": "SharedObject",
+              "SharedObject": {
+                "objectId": "0xfee3a2b47f9ef2de2405fc63d79194307945f8ea768815cfc46083bc20fbe6ed",
+                "initialSharedVersion": "1016313036",
+                "mutable": false
+              }
+            }
+          }
+        ],
+        "commands": [
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0xbff79914f7e03b78810cf58d3a3b8c900110f329b0177215f9b7e12d5fb88840",
+              "module": "party",
+              "function": "new",
+              "typeArguments": [],
+              "arguments": [
+                {
+                  "$kind": "Input",
+                  "Input": 2
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 3
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0xbff79914f7e03b78810cf58d3a3b8c900110f329b0177215f9b7e12d5fb88840",
+              "module": "party",
+              "function": "new",
+              "typeArguments": [],
+              "arguments": [
+                {
+                  "$kind": "Input",
+                  "Input": 4
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 5
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0xbff79914f7e03b78810cf58d3a3b8c900110f329b0177215f9b7e12d5fb88840",
+              "module": "message",
+              "function": "new_terms",
+              "typeArguments": [],
+              "arguments": [
+                {
+                  "$kind": "Result",
+                  "Result": 1
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 6
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 7
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 8
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 9
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 10
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0xbff79914f7e03b78810cf58d3a3b8c900110f329b0177215f9b7e12d5fb88840",
+              "module": "mandate",
+              "function": "create_derived",
+              "typeArguments": [],
+              "arguments": [
+                {
+                  "$kind": "Input",
+                  "Input": 0
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 1
+                },
+                {
+                  "$kind": "Result",
+                  "Result": 0
+                },
+                {
+                  "$kind": "Result",
+                  "Result": 2
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 11
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 12
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 13
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 14
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 15
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 16
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0xbff79914f7e03b78810cf58d3a3b8c900110f329b0177215f9b7e12d5fb88840",
+              "module": "mandate",
+              "function": "share",
+              "typeArguments": [],
+              "arguments": [
+                {
+                  "$kind": "Result",
+                  "Result": 3
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "SplitCoins",
+            "SplitCoins": {
+              "coin": {
+                "$kind": "Input",
+                "Input": 17
+              },
+              "amounts": [
+                {
+                  "$kind": "Input",
+                  "Input": 18
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0x267d3c0cb776eace2840f27e4d33da9c6d952f9749403f1fe6579f4962ed3c64",
+              "module": "deposit_for_burn",
+              "function": "deposit_for_burn",
+              "typeArguments": [
+                "0xa1ec7fc00a6f40db9693ad1415d0c193ad3906494428cf252621037bd7117e29::usdc::USDC"
+              ],
+              "arguments": [
+                {
+                  "$kind": "NestedResult",
+                  "NestedResult": [
+                    5,
+                    0
+                  ]
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 19
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 20
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 21
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 22
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 23
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 24
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 25
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0xbe8479044396a45e07de2c7f14789c35b8338406eebc53b2527da56839a91561",
+              "module": "handler",
+              "function": "burn",
+              "typeArguments": [],
+              "arguments": [
+                {
+                  "$kind": "Input",
+                  "Input": 26
+                },
+                {
+                  "$kind": "NestedResult",
+                  "NestedResult": [
+                    6,
+                    0
+                  ]
+                },
+                {
+                  "$kind": "NestedResult",
+                  "NestedResult": [
+                    6,
+                    1
+                  ]
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 27
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 28
+                }
+              ]
+            }
+          },
+          {
+            "$kind": "MoveCall",
+            "MoveCall": {
+              "package": "0x267d3c0cb776eace2840f27e4d33da9c6d952f9749403f1fe6579f4962ed3c64",
+              "module": "deposit_for_burn",
+              "function": "complete_burn",
+              "typeArguments": [
+                "0xa1ec7fc00a6f40db9693ad1415d0c193ad3906494428cf252621037bd7117e29::usdc::USDC",
+                "0xbe8479044396a45e07de2c7f14789c35b8338406eebc53b2527da56839a91561::handler::Auth"
+              ],
+              "arguments": [
+                {
+                  "$kind": "NestedResult",
+                  "NestedResult": [
+                    7,
+                    0
+                  ]
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 25
+                },
+                {
+                  "$kind": "Input",
+                  "Input": 29
+                }
+              ]
+            }
+          }
+        ],
+        "event": {
+          "eventType": "0x267d3c0cb776eace2840f27e4d33da9c6d952f9749403f1fe6579f4962ed3c64::deposit_for_burn::DepositForBurn",
+          "bcs": "0xba0aeb4444ae728084b1536f72ce7f6424c5e59a1d63b7c3af70e9bff3ed3823c0cf6a0000000000000000000000000000000000000000000000000000000000f64c0c61d5742c1ce86d1632e5d857fac1f2bf166f19c5a7fa13b30ea5089f010000000000000000000000007c758a6d57f3bc4855b67e2d3d9dd1987af09c01060000000000000000000000000000008fe6b999dc680ccfdd5bf7eb0974218be2542daa0000000000000000000000000a7232e8e5b35d17f444edb50feb7ae36975f2aa0000000000000000000000000000000000000000000000000000000000000000d0070000c00400000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000014a3417f70ace424cdabf9f889b0d72353a98beeea6707600b78f055eda7293329c0b00000000000000000000000000000000000000000000000000000000000000802634da9663803c3799be930dcd940fc849bda414bee28a076ec0020694b14da1000000000000000000000000000000000000000000000000000000000000000045cef927c57391aa035a1bf8c193069f7371576220efefad2c3f72acf92b4c3fc8f201cc38984b8203c800f8297ca57d28167bc54476f10e10befd178eae5fda8993a90d97ca2293df2642334c0f076ba4969b01c111e1e5f5d19e98435f5b23000000000000000000000000000000000000000000000000000000006b00d5c800000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000002000000000000000000000000036cbd53842c5426634e7929541ec2318f3dcf7e00000000000000000000000094cc0aac535ccdb3c01d6787d6413c739ae12bc400000000000000000000000000000000000000000000000000000000006acfc0000000000000000000000000420000000000000000000000000000000000000600000000000000000000000094cc0aac535ccdb3c01d6787d6413c739ae12bc4000000000000000000000000000000000000000000000000001936ad5ec6706b"
+        },
+        "iris": {
+          "httpStatus": 200,
+          "body": {
+            "messages": [
+              {
+                "attestation": "0x535d55a2f2d95cb2867301214651f9072a18a8a8859e84fef70d300040aa8bc9668896e1a59073315fdfd7fed552d973398c459127791e25b85c4be0c8f1e42e1bda2a197f0ae8a79966be938878b3eb1278f6c651643c13e5851273cca2e085b7308ea7b080f4eb3997a14468a6b402d8c122f5d087e1d2ad1846fb2c3cc6f8d71c",
+                "message": "0x00000001000000080000000689888df667b5f47c5c6b15aebce0ba070ead14af01494ef128449f71c416859de3e567f5d3598022563be19ee9da09b6c7190400ce48e6155a872e569f9e7a510000000000000000000000008fe6b999dc680ccfdd5bf7eb0974218be2542daa0000000000000000000000000a7232e8e5b35d17f444edb50feb7ae36975f2aa000007d0000007d000000001ba0aeb4444ae728084b1536f72ce7f6424c5e59a1d63b7c3af70e9bff3ed38230000000000000000000000007c758a6d57f3bc4855b67e2d3d9dd1987af09c0100000000000000000000000000000000000000000000000000000000006acfc0f64c0c61d5742c1ce86d1632e5d857fac1f2bf166f19c5a7fa13b30ea5089f0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000014a3417f70ace424cdabf9f889b0d72353a98beeea6707600b78f055eda7293329c0b00000000000000000000000000000000000000000000000000000000000000802634da9663803c3799be930dcd940fc849bda414bee28a076ec0020694b14da1000000000000000000000000000000000000000000000000000000000000000045cef927c57391aa035a1bf8c193069f7371576220efefad2c3f72acf92b4c3fc8f201cc38984b8203c800f8297ca57d28167bc54476f10e10befd178eae5fda8993a90d97ca2293df2642334c0f076ba4969b01c111e1e5f5d19e98435f5b23000000000000000000000000000000000000000000000000000000006b00d5c800000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000002000000000000000000000000036cbd53842c5426634e7929541ec2318f3dcf7e00000000000000000000000094cc0aac535ccdb3c01d6787d6413c739ae12bc400000000000000000000000000000000000000000000000000000000006acfc0000000000000000000000000420000000000000000000000000000000000000600000000000000000000000094cc0aac535ccdb3c01d6787d6413c739ae12bc4000000000000000000000000000000000000000000000000001936ad5ec6706b",
+                "eventNonce": "0x89888df667b5f47c5c6b15aebce0ba070ead14af01494ef128449f71c416859d",
+                "cctpVersion": 2,
+                "status": "complete",
+                "decodedMessage": {
+                  "sourceDomain": "8",
+                  "destinationDomain": "6",
+                  "nonce": "0x89888df667b5f47c5c6b15aebce0ba070ead14af01494ef128449f71c416859d",
+                  "sender": "0xe3e567f5d3598022563be19ee9da09b6c7190400ce48e6155a872e569f9e7a51",
+                  "recipient": "0x8fe6b999dc680ccfdd5bf7eb0974218be2542daa",
+                  "destinationCaller": "0x0a7232e8e5b35d17f444edb50feb7ae36975f2aa",
+                  "minFinalityThreshold": "2000",
+                  "finalityThresholdExecuted": "2000",
+                  "messageBody": "0x00000001ba0aeb4444ae728084b1536f72ce7f6424c5e59a1d63b7c3af70e9bff3ed38230000000000000000000000007c758a6d57f3bc4855b67e2d3d9dd1987af09c0100000000000000000000000000000000000000000000000000000000006acfc0f64c0c61d5742c1ce86d1632e5d857fac1f2bf166f19c5a7fa13b30ea5089f0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000014a3417f70ace424cdabf9f889b0d72353a98beeea6707600b78f055eda7293329c0b00000000000000000000000000000000000000000000000000000000000000802634da9663803c3799be930dcd940fc849bda414bee28a076ec0020694b14da1000000000000000000000000000000000000000000000000000000000000000045cef927c57391aa035a1bf8c193069f7371576220efefad2c3f72acf92b4c3fc8f201cc38984b8203c800f8297ca57d28167bc54476f10e10befd178eae5fda8993a90d97ca2293df2642334c0f076ba4969b01c111e1e5f5d19e98435f5b23000000000000000000000000000000000000000000000000000000006b00d5c800000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000002000000000000000000000000036cbd53842c5426634e7929541ec2318f3dcf7e00000000000000000000000094cc0aac535ccdb3c01d6787d6413c739ae12bc400000000000000000000000000000000000000000000000000000000006acfc0000000000000000000000000420000000000000000000000000000000000000600000000000000000000000094cc0aac535ccdb3c01d6787d6413c739ae12bc4000000000000000000000000000000000000000000000000001936ad5ec6706b",
+                  "decodedMessageBody": {
+                    "burnToken": "0xba0aeb4444ae728084b1536f72ce7f6424c5e59a1d63b7c3af70e9bff3ed3823",
+                    "mintRecipient": "0x7c758a6d57f3bc4855b67e2d3d9dd1987af09c01",
+                    "amount": "7000000",
+                    "messageSender": "0xf64c0c61d5742c1ce86d1632e5d857fac1f2bf166f19c5a7fa13b30ea5089f01",
+                    "maxFee": "0",
+                    "feeExecuted": "0",
+                    "expirationBlock": "0",
+                    "hookData": "0x00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000014a3417f70ace424cdabf9f889b0d72353a98beeea6707600b78f055eda7293329c0b00000000000000000000000000000000000000000000000000000000000000802634da9663803c3799be930dcd940fc849bda414bee28a076ec0020694b14da1000000000000000000000000000000000000000000000000000000000000000045cef927c57391aa035a1bf8c193069f7371576220efefad2c3f72acf92b4c3fc8f201cc38984b8203c800f8297ca57d28167bc54476f10e10befd178eae5fda8993a90d97ca2293df2642334c0f076ba4969b01c111e1e5f5d19e98435f5b23000000000000000000000000000000000000000000000000000000006b00d5c800000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000002000000000000000000000000036cbd53842c5426634e7929541ec2318f3dcf7e00000000000000000000000094cc0aac535ccdb3c01d6787d6413c739ae12bc400000000000000000000000000000000000000000000000000000000006acfc0000000000000000000000000420000000000000000000000000000000000000600000000000000000000000094cc0aac535ccdb3c01d6787d6413c739ae12bc4000000000000000000000000000000000000000000000000001936ad5ec6706b"
+                  },
+                  "decodedCctpXMessageBody": null
+                },
+                "delayReason": null,
+                "destinationMintTxHash": "0xb997f7e2929db3e86e199685a9a6c3285d009ce944ba736ce13f6427ed8c6146"
+              }
+            ],
+            "sourceTxHash": "74maVesBKFHemwCYDSXiAbJmKrq188d4dyBEqJ1iKRn5"
+          }
+        }
+      }
+    }
+  }
+}

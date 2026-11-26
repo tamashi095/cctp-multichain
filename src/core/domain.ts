@@ -34,7 +34,7 @@ export interface ChainRef {
   readonly name: string
   readonly network: Network
   readonly domain: Domain
-  /** The adapter family: `"evm"`, `"solana"`; later `"sui"`. */
+  /** The adapter family: `"evm"`, `"solana"`, `"sui"`. */
   readonly family: string
   /** Native USDC in the family's own address form. */
   readonly usdc: string
@@ -75,6 +75,42 @@ export interface SolanaChainRef extends ChainRef {
   readonly tokenMessengerMinter: string
 }
 
+/**
+ * Sui: Circle's three packages, their shared state objects, and the two
+ * identifiers a message carries for Sui.
+ * https://developers.circle.com/cctp/references/sui-packages
+ */
+export interface SuiChainRef extends ChainRef {
+  readonly family: "sui"
+  /**
+   * The network's chain identifier (its genesis checkpoint digest), checked
+   * against the RPC before every write and scan.
+   */
+  readonly chainIdentifier: string
+  /** USDC's coin type: `0x…::usdc::USDC`. */
+  readonly usdc: string
+  /** Package ids: the call targets, which change when Circle upgrades a package. */
+  readonly messageTransmitterPackage: string
+  readonly tokenMessengerMinterPackage: string
+  readonly stablecoinHandlerPackage: string
+  /** Shared state objects, passed as arguments. */
+  readonly messageTransmitterState: string
+  readonly tokenMessengerMinterState: string
+  readonly stablecoinHandlerState: string
+  readonly usdcTreasury: string
+  /**
+   * The token messenger as messages name it: keccak256 of the type name
+   * `<package>::message_transmitter_authenticator::MessageTransmitterAuthenticator`
+   * (circlefin/sui-cctp, `message_transmitter_v2::auth::auth_caller_identifier`).
+   */
+  readonly messenger: Hex
+  /**
+   * USDC as messages name it: keccak256 of the type name `<package>::usdc::USDC`
+   * (`token_messenger_minter_v2::token_utils::calculate_token_id`).
+   */
+  readonly usdcTokenId: Hex
+}
+
 /** Whether `chain` belongs to the EVM family. */
 export const isEvm = (chain: ChainRef): chain is EvmChainRef =>
   chain.family === "evm"
@@ -82,3 +118,7 @@ export const isEvm = (chain: ChainRef): chain is EvmChainRef =>
 /** Whether `chain` belongs to the Solana family. */
 export const isSolana = (chain: ChainRef): chain is SolanaChainRef =>
   chain.family === "solana"
+
+/** Whether `chain` belongs to the Sui family. */
+export const isSui = (chain: ChainRef): chain is SuiChainRef =>
+  chain.family === "sui"

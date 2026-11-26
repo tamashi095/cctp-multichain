@@ -105,6 +105,16 @@ export class RecipientAccountMissing extends Schema.TaggedError<RecipientAccount
   { domain: Schema.Number, account: Schema.String }
 ) {}
 
+/**
+ * The destination refused to mint because the recipient (or the claimer) is
+ * on USDC's deny list. The nonce is not used: the same claim succeeds once
+ * Circle lifts the block.
+ */
+export class RecipientDenied extends Schema.TaggedError<RecipientDenied>()(
+  "RecipientDenied",
+  { domain: Schema.Number, reason: Schema.String }
+) {}
+
 /** The RPC or wallet is on another chain than the one configured. */
 export class ChainIdMismatch extends Schema.TaggedError<ChainIdMismatch>()(
   "ChainIdMismatch",
@@ -227,6 +237,7 @@ export type ClaimError =
   | MalformedMessage
   | NonceAlreadyUsed
   | MessageExpired
+  | RecipientDenied
   | RecipientAccountMissing
   | InsufficientGas
   | SignerUnavailable

@@ -4,10 +4,11 @@
  * testnet USDC and gas.
  *
  *   CCTP_LIVE=1 \
- *   EVM_PRIVATE_KEY=0x... SOLANA_SECRET_KEY='[1,2,...]' \
+ *   EVM_PRIVATE_KEY=0x... SOLANA_SECRET_KEY='[1,2,...]' SUI_SECRET_KEY=suiprivkey1... \
  *   bun scripts/live-testnet.ts <from> <to> <amount in USDC subunits> [fast]
  *
- * `<from>` and `<to>` are registry keys: base, ethereum, arbitrum, solana, ...
+ * `<from>` and `<to>` are registry keys: base, ethereum, arbitrum, solana, sui, ...
+ * Only the keys of the two chains named are needed.
  * RPCs: `<KEY>_RPC_URL` (for example `BASE_RPC_URL`, `SOLANA_RPC_URL`), or
  * viem's and Solana's public defaults. The registry is `testnet` and cannot
  * be changed from the command line.
@@ -16,6 +17,9 @@
  * `.transfers/` and the transfer resumes from its recorded status.
  */
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs"
+import { decodeSuiPrivateKey } from "@mysten/sui/cryptography"
+import { SuiGrpcClient } from "@mysten/sui/grpc"
+import { Ed25519Keypair } from "@mysten/sui/keypairs/ed25519"
 import { Connection, Keypair } from "@solana/web3.js"
 import { Effect, Layer, Stream } from "effect"
 import { createPublicClient, http } from "viem"
@@ -25,12 +29,14 @@ import {
   Iris,
   isEvm,
   isSolana,
+  isSui,
   testnet,
   Transfers,
   TransferStore,
 } from "../src/core/index.ts"
 import { EvmAdapter, EvmSigner } from "../src/evm/index.ts"
 import { SolanaAdapter, SolanaSigner } from "../src/solana/index.ts"
+import { SuiAdapter, SuiSigner } from "../src/sui/index.ts"
 
 if (process.env.CCTP_LIVE !== "1") {
   console.error(
@@ -51,12 +57,20 @@ if (from === undefined || to === undefined || amount === undefined) {
 }
 
 const rpcUrl = (key: string) => process.env[`${key.toUpperCase()}_RPC_URL`]
-const evmAccount = privateKeyToAccount(
-  process.env.EVM_PRIVATE_KEY as `0x${string}`
-)
-const solanaKeypair = Keypair.fromSecretKey(
-  Uint8Array.from(JSON.parse(process.env.SOLANA_SECRET_KEY ?? "[]"))
-)
+const families = new Set([from.family, to.family])
+const evmAccount = families.has("evm")
+  ? privateKeyToAccount(process.env.EVM_PRIVATE_KEY as `0x${string}`)
+  : undefined
+const solanaKeypair = families.has("solana")
+  ? Keypair.fromSecretKey(
+      Uint8Array.from(JSON.parse(process.env.SOLANA_SECRET_KEY ?? "[]"))
+    )
+  : undefined
+const suiKeypair = families.has("sui")
+  ? Ed25519Keypair.fromSecretKey(
+      decodeSuiPrivateKey(process.env.SUI_SECRET_KEY ?? "").secretKey
+    )
+  : undefined
 
 const adapters = Adapters.layer(
   [from, to].map((chain) =>
@@ -71,7 +85,14 @@ const adapters = Adapters.layer(
               "confirmed"
             ),
           })
-        : Effect.die("no adapter for this chain family")
+        : isSui(chain)
+          ? SuiAdapter.make(chain, {
+              client: new SuiGrpcClient({
+                network: "testnet",
+                baseUrl: rpcUrl("sui") ?? "https://fullnode.testnet.sui.io:443",
+              }),
+            })
+          : Effect.die("no adapter for this chain family")
   )
 )
 
@@ -95,14 +116,27 @@ const live = Transfers.layer.pipe(
     Layer.mergeAll(
       Iris.layer({ network: "testnet" }),
       store,
-      EvmSigner.layerAccount(evmAccount, (chain) => http(rpcUrl(chain.key))),
-      SolanaSigner.layerKeypair(solanaKeypair)
+      evmAccount === undefined
+        ? Layer.empty
+        : EvmSigner.layerAccount(evmAccount, (chain) =>
+            http(rpcUrl(chain.key))
+          ),
+      solanaKeypair === undefined
+        ? Layer.empty
+        : SolanaSigner.layerKeypair(solanaKeypair),
+      suiKeypair === undefined
+        ? Layer.empty
+        : SuiSigner.layerKeypair(suiKeypair)
     )
   )
 )
 
-const address = (chain: typeof from) =>
-  isEvm(chain) ? evmAccount.address : solanaKeypair.publicKey.toBase58()
+const address = (chain: typeof from): string =>
+  (isEvm(chain)
+    ? evmAccount?.address
+    : isSolana(chain)
+      ? solanaKeypair?.publicKey.toBase58()
+      : suiKeypair?.toSuiAddress()) ?? ""
 
 const program = Effect.gen(function* () {
   const transfers = yield* Transfers

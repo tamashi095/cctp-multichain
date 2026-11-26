@@ -1,9 +1,9 @@
 {
   "name": "cctp-multichain",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "Circle CCTP V2 USDC transfers between EVM chains and Solana, in any direction, as an Effect library",
+  "description": "Circle CCTP V2 USDC transfers between EVM chains, Solana and Sui, in any direction, as an Effect library",
   "packageManager": "bun@1.4.4",
   "sideEffects": false,
   "engines": {
@@ -25,6 +25,10 @@
     "./solana": {
       "types": "./dist/solana/index.d.ts",
       "import": "./dist/solana/index.js"
+    },
+    "./sui": {
+      "types": "./dist/sui/index.d.ts",
+      "import": "./dist/sui/index.js"
     }
   },
   "scripts": {
@@ -42,7 +46,8 @@
   "peerDependencies": {
     "effect": "4.1.5",
     "viem": "^2.21.0",
-    "@solana/web3.js": "^1.98.0"
+    "@solana/web3.js": "^1.98.0",
+    "@mysten/sui": "^2.28.0"
   },
   "peerDependenciesMeta": {
     "viem": {
@@ -50,10 +55,14 @@
     },
     "@solana/web3.js": {
       "optional": true
+    },
+    "@mysten/sui": {
+      "optional": true
     }
   },
   "devDependencies": {
     "@effect/vitest": "4.1.5",
+    "@mysten/sui": "2.39.1",
     "@solana/web3.js": "1.99.0",
     "@types/node": "26.6.11",
     "@typescript-eslint/eslint-plugin": "8.74.0",

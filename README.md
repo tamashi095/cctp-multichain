@@ -1,16 +1,16 @@
 # cctp-multichain
 
 Native USDC transfers through Circle CCTP V2 in any direction between EVM
-chains and Solana (EVM → EVM, EVM → Solana, Solana → EVM), as an
-[Effect](https://effect.website) library.
+chains, Solana and Sui, as an [Effect](https://effect.website) library.
 
 A transfer is three steps, whatever the route: a burn on the source chain,
 Circle's attestation of that burn, and a claim on the destination chain. This
 library does the three, keeps a resumable record of where each transfer is, and
 checks every message Circle returns against the burn it made before it claims.
 
-Status: unit-tested against real captured mainnet data. **No transaction has
-been signed or sent with it yet**, on mainnet or testnet. See
+Status: unit-tested against real captured mainnet and testnet data, and its
+read-only paths checked against mainnet. **No transaction has been signed or
+sent with it yet**, on mainnet or testnet. See
 [What is and isn't verified](#what-is-and-isnt-verified) before using it with
 funds.
 
@@ -68,9 +68,13 @@ const program = Effect.gen(function* () {
 Effect.runPromise(program.pipe(Effect.provide(live)))
 ```
 
+Sui is the same shape, from `cctp-multichain/sui`:
+`SuiAdapter.make(mainnet.sui, { client })` over any `@mysten/sui` client, with
+`SuiSigner.layerWallet(wallet)` or `SuiSigner.layerKeypair(keypair)`.
+
 On a backend the only change is the signer layers:
-`EvmSigner.layerAccount(privateKeyToAccount(key), (chain) => http(rpcFor(chain)))`
-and `SolanaSigner.layerKeypair(keypair)`. An adapter built without its signer
+`EvmSigner.layerAccount(privateKeyToAccount(key), (chain) => http(rpcFor(chain)))`,
+`SolanaSigner.layerKeypair(keypair)` and `SuiSigner.layerKeypair(keypair)`. An adapter built without its signer
 is read-only (it can still scan burns and read nonces) and fails a write with
 `SignerUnavailable`.
 
@@ -79,11 +83,11 @@ To resume after a reload or a crash, run the record again:
 
 ## Layout
 
-One package with three subpath exports, not a workspace. The three parts
-version together and share one small core, so separate packages would add
-release bookkeeping and nothing else; the subpaths already keep viem out of a
-Solana-only bundle and the reverse (`viem` and `@solana/web3.js` are optional
-peer dependencies). ESLint enforces the boundary: `src/core` may import neither
+One package with four subpath exports, not a workspace. The parts version
+together and share one small core, so separate packages would add release
+bookkeeping and nothing else; the subpaths already keep each chain SDK out of
+a bundle that does not use it (`viem`, `@solana/web3.js` and `@mysten/sui` are
+optional peer dependencies). ESLint enforces the boundary: `src/core` may import neither
 a chain SDK nor an adapter.
 
 ```
@@ -101,7 +105,9 @@ src/core      no chain SDK
   errors.ts        every failure, as tagged errors
 src/evm       viem: one adapter for every EVM chain, EvmSigner
 src/solana    Circle's Solana programs: adapter, instructions, SolanaSigner
-scripts/      capture-fixtures.ts (read-only), live-testnet.ts (opt-in)
+src/sui       Circle's Sui packages: adapter, PTB builders, SuiSigner
+scripts/      capture-fixtures.ts, capture-sui-fixtures.ts, live-readonly.ts
+              (all read-only), live-testnet.ts (opt-in, signs)
 test/         unit tests and fixtures
 ```
 
@@ -110,21 +116,28 @@ test/         unit tests and fixtures
 CCTP has no pairwise logic. So the unit of extension is a chain _family_:
 `ChainAdapter` (`burn`, `findBurns`, `claim`, `isNonceUsed`,
 `prepareRecipient`, `estimateClaimCost`, `toBytes32`, `recipientFromAddress`,
-`expirationHeight`) is implemented once for EVM and once for Solana, and
+`expirationHeight`) is implemented once each for EVM, Solana and Sui, and
 `Transfers` talks to both ends of any route through it. Route-specific code
 would grow as N².
 
 - **A new EVM chain** is one entry in `src/core/registry.ts`.
-- **Sui** (out of scope today) is one new `src/sui` adapter plus its registry
-  entry. `ChainRef.family` is an open string and nothing in `core` switches on
-  it, so the core does not change.
+- **A new family** is one adapter and its registry entries. Sui was added
+  that way: `src/sui`, a `SuiChainRef`, two registry entries, and one new
+  error (`RecipientDenied`). The orchestrator did not change; the one
+  interface change was letting `recipientFromAddress` read the chain.
 
 ### Signers stay outside
 
 Adapters build unsigned transactions and hand them to a signer service
 provided through a Layer: `EvmSigner` (signs and broadcasts through a viem
-wallet client) and `SolanaSigner` (signs a `VersionedTransaction`; the adapter
-sends it). The library never sees a key.
+wallet client), `SolanaSigner` (signs a `VersionedTransaction`; the adapter
+sends it) and `SuiSigner` (signs built transaction bytes; the adapter executes
+them). The library never sees a key.
+
+`SuiSigner` can carry a **sponsor**: another party that pays the gas and adds
+its signature (`layerKeypair(keypair, { sponsor })`). The gas check then reads
+the sponsor's SUI. This is how a relayer can pay for a user's burn on Sui; for
+a claim, a relayer simply claims itself.
 
 ## The state machine
 
@@ -137,7 +150,7 @@ burning ──► attesting ──► readyToMint ──► minting ──► co
 
 | Status        | What happens                                                                                                                                                                                                                   |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `burning`     | `approve` + `depositForBurn` (EVM) or `deposit_for_burn` (Solana). Once per transfer.                                                                                                                                          |
+| `burning`     | `approve` + `depositForBurn` (EVM), `deposit_for_burn` (Solana) or the three-call burn PTB (Sui). Once per transfer.                                                                                                           |
 | `attesting`   | Poll `GET /v2/messages/{domain}?transactionHash=` with backoff until Iris returns a message that _is_ this burn.                                                                                                               |
 | `readyToMint` | Read the destination nonce (anyone may have delivered). Re-attest a Fast message near its `expirationBlock`. Hand the message to the relayer if one is configured and the amount is above its minimum, and wait for the nonce. |
 | `minting`     | Read the nonce again, prepare the recipient (Solana: create the USDC token account), and claim from the user's own wallet.                                                                                                     |
@@ -165,7 +178,7 @@ in anything with `read`/`write`/`ids`.
   nothing is burned. Circle keeps only what it charges (`feeExecuted`), and the
   validator refuses a message whose `feeExecuted` is above `maxFee`.
 - A Fast request becomes Standard when the source chain offers no Fast Transfer
-  (`fastSource: false`, Circle's "N/A") or when `GET /v2/fastBurn/USDC/allowance`
+  (`fastSource: false`, Circle's "N/A": Avalanche, Polygon PoS and Sui here) or when `GET /v2/fastBurn/USDC/allowance`
   is below the amount.
 - The recipient receives `amount − feeExecuted`.
 
@@ -191,6 +204,12 @@ funds:
 - **RPCs are trusted for what they report**, as with any wallet. The chain id
   (EVM) or genesis hash (Solana) is checked before every write and scan,
   because Circle's contracts have the same addresses on many chains.
+- **A Sui recipient is not checked by the chain.** Sui mints to whatever 32
+  bytes the message names; USDC minted to an object or package id is lost.
+  The adapter accepts only a full `0x` + 64-hex address and refuses one an
+  object lives at, but it cannot tell a real account from an id nobody
+  controls. **The caller must bind the recipient to the user's real Sui
+  account** before starting a transfer.
 - **The store is trusted**: whoever can rewrite a transfer record can change
   what it expects. Keep it where the user's own data lives.
 
@@ -209,7 +228,9 @@ Verified on every transfer, at run time:
 - The attestation is a non-empty multiple of 65 bytes.
 - `maxFee` is within the ceiling, before the burn.
 - Delivery, from the destination's own state: `usedNonces(nonce)` on EVM, the
-  used-nonce account (owned by MessageTransmitterV2, flag set) on Solana.
+  used-nonce account (owned by MessageTransmitterV2, flag set) on Solana, and
+  `state::is_nonce_used` read by simulation on Sui. A read that fails is an
+  error, never "unused".
 - Burn scans (`findBurns`) read finalized blocks only.
 
 Verified by the tests, against real data (`test/fixtures/captured.json`,
@@ -233,6 +254,24 @@ captured read-only from Iris, Base and Solana mainnet by
 - A bare claim fits one Solana transaction (≤ 1232 bytes) without a lookup
   table.
 - EVM chain ids match viem's chain definitions.
+- Sui (`test/fixtures/captured-sui.json`, from Sui's public full nodes and
+  Iris, mainnet and sandbox, by `scripts/capture-sui-fixtures.ts`):
+  - The claim builder reproduces a real mainnet claim (Arbitrum → Sui) and a
+    real testnet claim (Base Sepolia → Sui) command for command: the same four
+    calls, type arguments, objects and pure bytes.
+  - The burn builder reproduces the three CCTP calls of real burns (Sui → OP
+    Mainnet, Sui → Solana, and a testnet burn with hook data).
+  - Sui's two message identifiers (the messenger and USDC's token id) are the
+    hashes Circle's Move source derives, and they are the ones in real
+    messages on both networks. Iris's sandbox does attest Sui V2 routes.
+  - Two real mainnet transfers are replayed through the orchestrator over the
+    real adapters on scripted nodes: the record `create` writes predicts
+    Circle's real attested message byte for byte (Arbitrum → Sui, Sui → OP
+    Mainnet).
+- Read-only, against mainnet (`scripts/live-readonly.ts`, 2026-11-26): each
+  family's delivery oracle answers "used" for a nonce a fixture shows
+  delivered and "unused" for a random one (Sui, Arbitrum, Solana), and Sui's
+  recipient check accepts an account and refuses an object id.
 
 **Not verified:**
 
@@ -244,7 +283,11 @@ captured read-only from Iris, Base and Solana mainnet by
   chain verifies them against Circle's attesters when the message is claimed; a
   forged attestation costs gas and mints nothing.
 - **Sandbox behaviour**: that `iris-api-sandbox.circle.com` attests
-  EVM ↔ Solana devnet routes was not exercised.
+  EVM ↔ Solana devnet routes was not exercised. (For Sui testnet it does: the
+  fixtures hold a sandbox-attested message each way.)
+- **Building a Sui transaction.** The tests stand in for
+  `Transaction.build`, which needs a node to resolve objects, gather the USDC
+  coin and choose gas. That step, and a sponsored build, have not run.
 - Circle's future fee policy, pauses, denylists and burn limits. They make a
   burn or claim fail (funds stay where they were); they are not predicted.
 
@@ -275,17 +318,39 @@ destinationDomain, message, attestation }`) is this library's own. No
    the Standard fee comes from Iris (currently 0). If Circle enforces an
    on-chain minimum above what Iris reports, the burn reverts and nothing is
    burned.
-7. **Registry coverage**: Ethereum, Avalanche, OP Mainnet, Arbitrum, Base,
-   Polygon PoS, Unichain, Linea, World Chain and Solana, each with its testnet.
-   Circle supports more; each is a data entry. Circle's page lists both a
-   "Sonic Testnet" and a "Sonic Blaze Testnet" USDC, which is why Sonic was left
-   out rather than guessed.
+7. **Sui package upgrades.** The registry holds one id per Circle package and
+   uses it both as the call target and inside type names (the handler's
+   `Auth` witness, the `DepositForBurn` event type). Today they are the same.
+   After an upgrade the call target changes and type names keep the original
+   id: the registry will need both.
+8. **Sui's minted USDC is a `Coin<USDC>` object**, as Circle's contracts mint
+   it. Folding it into the recipient's address balance (`coin::send_funds`,
+   which the recipient must sign) is not built.
+9. **Sui failure matching.** A failed claim is classified by Move module name
+   and abort code (`receive_message` 4, `handle_receive_message` 8, `treasury`
+   1. from Circle's sources, without comparing package ids. `RecipientDenied`
+      also covers a denied _claimer_: Circle's `treasury::mint` checks both with
+      one code.
+10. **Sui expiry uses this machine's clock.** On Sui `expirationBlock` is a
+    time in milliseconds; a Fast message within a minute of it is re-attested.
+11. **Sui burn search without a cursor** reads only the sender's newest event
+    pages (`maxPages`); public nodes prune older history.
+12. **Registry coverage**: Ethereum, Avalanche, OP Mainnet, Arbitrum, Base,
+    Polygon PoS, Unichain, Linea, World Chain, Solana and Sui, each with its testnet.
+    Circle supports more; each is a data entry. Circle's page lists both a
+    "Sonic Testnet" and a "Sonic Blaze Testnet" USDC, which is why Sonic was left
+    out rather than guessed.
 
 Details that did not come from Circle's pages, and where they came from:
 
 - **EVM chain ids**: viem's chain definitions (checked by a test).
 - **Solana genesis hashes**: `getGenesisHash` on Solana's public mainnet and
   devnet RPCs.
+- **Sui chain identifiers**: `getChainIdentifier` on Sui's public full nodes
+  (over gRPC; another transport may spell it differently).
+- **Sui's deny-list abort**: `EDeniedAddress` in `treasury.move` of
+  `circlefin/stablecoin-sui`. Everything else about Sui is from Circle's Sui
+  packages page, its Sui quickstart and `circlefin/sui-cctp` at `b23b83b`.
 - **Associated token account derivation and `CreateIdempotent`**: the SPL
   Associated Token Account program. The derivation is confirmed by the real
   `receive_message` fixture.
@@ -316,7 +381,8 @@ behind:
 | `AttestationTimeout`                                                           | `attesting`                                       | Run again. A burn is never lost by waiting. `delayReason` says why a Fast attestation is slow.             |
 | `MessageMismatch`                                                              | `attesting`, nothing claimed                      | The transaction named is not this burn. `attachBurn` the right one.                                        |
 | `RelayerError`, relayer timeout                                                | (falls back to self-claim)                        | —                                                                                                          |
-| `RecipientAccountMissing`, `InsufficientGas`, `SignerUnavailable` on the claim | `readyToMint`                                     | Fund the claimer (Solana needs SOL for rent and fees) and run again, or let anyone else claim.             |
+| `RecipientDenied` (Sui: the recipient or claimer is on USDC's deny list)       | `readyToMint`, nonce unused                       | Run again once Circle lifts the block. Nothing else can be done: the burn named that recipient.            |
+| `RecipientAccountMissing`, `InsufficientGas`, `SignerUnavailable` on the claim | `readyToMint`                                     | Fund the claimer (SOL for rent and fees on Solana, SUI on Sui) and run again, or let anyone else claim.    |
 | `SubmissionUnknown`, `ChainError`, `TransactionFailed` on the claim            | `readyToMint`, or `complete` if the nonce is used | The nonce is read before anything else; run again.                                                         |
 | `MessageExpired`, or a Fast message near `expirationBlock`                     | `attesting`                                       | `POST /v2/reattest/{nonce}` was sent; run again if it stopped. Circle sets no deadline for re-attestation. |
 | `NonceAlreadyUsed`                                                             | `complete`                                        | Delivered by someone else.                                                                                 |
@@ -335,9 +401,12 @@ bun run check    # format:check, lint, typecheck, test, build
 ```
 
 Tests run on Vitest with `@effect/vitest` (`TestClock` drives the polling). No
-test touches the network. Two scripts do, and neither runs in CI:
+test touches the network. The scripts do, and none runs in CI:
 
-- `bun scripts/capture-fixtures.ts` re-captures the fixtures. Read-only.
+- `bun scripts/capture-fixtures.ts` and `bun scripts/capture-sui-fixtures.ts`
+  re-capture the fixtures. Read-only.
+- `bun scripts/live-readonly.ts` reads the three delivery oracles on mainnet.
+  Read-only, no key.
 - `CCTP_LIVE=1 … bun scripts/live-testnet.ts <from> <to> <amount>` makes a real
   **testnet** transfer with keys from the environment. It signs and sends
   transactions; it is hard-wired to the testnet registry. Never commit keys:

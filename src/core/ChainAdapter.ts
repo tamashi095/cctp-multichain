@@ -4,7 +4,7 @@
  *
  * CCTP has no pairwise logic: a transfer is a burn on the source, Circle's
  * attestation, and a claim on the destination. So the unit of extension is a
- * family (EVM, Solana; later Sui), never a route, and the orchestrator talks
+ * family (EVM, Solana, Sui), never a route, and the orchestrator talks
  * to both ends through this one interface.
  */
 import { Context, Effect, Layer, type Option, type Stream } from "effect"
@@ -67,13 +67,14 @@ export interface ChainAdapter {
   readonly toBytes32: (address: string) => Effect.Effect<Hex, InvalidAddress>
   /**
    * The `mintRecipient` for a wallet on this chain: the address itself on
-   * EVM, its USDC token account on Solana.
+   * EVM and Sui, its USDC token account on Solana. Sui does not check the
+   * recipient, so its adapter refuses an id an object or package lives at.
    *
-   * Fails with: `InvalidAddress`.
+   * Fails with: `InvalidAddress`, `ChainError`, `ChainIdMismatch`.
    */
   readonly recipientFromAddress: (
     address: string
-  ) => Effect.Effect<Hex, InvalidAddress>
+  ) => Effect.Effect<Hex, InvalidAddress | ReadError>
   /**
    * An opaque position on this chain, taken before a burn, from which
    * `findBurns` later searches for it.
@@ -129,7 +130,7 @@ export interface ChainAdapter {
    * message's recipient. Succeeds once included and succeeded.
    *
    * Fails with: `NonceAlreadyUsed` (already delivered), `MessageExpired`,
-   * `RecipientAccountMissing`, `InsufficientGas`, `MalformedMessage`,
+   * `RecipientDenied`, `RecipientAccountMissing`, `InsufficientGas`, `MalformedMessage`,
    * `SignerUnavailable`, `SignerError`, `TransactionFailed`, `ChainError`,
    * `ChainIdMismatch`, and `SubmissionUnknown`. After any failure read
    * `isNonceUsed` before trying again.

@@ -39,11 +39,15 @@ export interface FakeChain {
   height: Option.Option<bigint>
 }
 
-export const fakeChain = (domain: number, fastSource = true): FakeChain => {
+export const fakeChain = (
+  domain: number,
+  fastSource = true,
+  network: "mainnet" | "testnet" = "testnet"
+): FakeChain => {
   const chain: ChainRef = {
     key: `chain${domain}`,
     name: `Chain ${domain}`,
-    network: "testnet",
+    network,
     domain,
     family: "fake",
     usdc: `usdc${domain}`,
@@ -128,7 +132,9 @@ export interface FakeIris {
   allowance: number
 }
 
-export const fakeIris = (): FakeIris => {
+export const fakeIris = (
+  network: "mainnet" | "testnet" = "testnet"
+): FakeIris => {
   const state: FakeIris = {
     calls: [],
     messages: [],
@@ -136,7 +142,7 @@ export const fakeIris = (): FakeIris => {
     allowance: 1_000_000,
     layer: Layer.sync(Iris, () =>
       Iris.of({
-        network: "testnet",
+        network,
         fees: () =>
           Effect.sync(() => [
             { finalityThreshold: 1000, minimumFee: state.minimumFeeBps },
