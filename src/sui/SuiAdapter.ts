@@ -16,7 +16,11 @@ import {
   type SuiClientTypes,
 } from "@mysten/sui/client"
 import type { Transaction } from "@mysten/sui/transactions"
-import { SUI_TYPE_ARG } from "@mysten/sui/utils"
+import {
+  isValidSuiAddress,
+  normalizeSuiAddress,
+  SUI_TYPE_ARG,
+} from "@mysten/sui/utils"
 import { toHex, ZERO_BYTES32, type Hex } from "../core/bytes.ts"
 import type { ChainAdapter, FoundBurn } from "../core/ChainAdapter.ts"
 import type { SuiChainRef } from "../core/domain.ts"
@@ -109,9 +113,10 @@ export const make = (
 
     /** Only the full 32-byte form: a short or mistyped id must not be padded into someone else's. */
     const toBytes32 = (address: string) =>
-      /^0x[0-9a-fA-F]{64}$/.test(address) &&
-      address.toLowerCase() !== ZERO_BYTES32
-        ? Effect.succeed(address.toLowerCase() as Hex)
+      address.startsWith("0x") &&
+      isValidSuiAddress(address) &&
+      normalizeSuiAddress(address) !== ZERO_BYTES32
+        ? Effect.succeed(normalizeSuiAddress(address) as Hex)
         : Effect.fail(
             new InvalidAddress({
               family: "sui",
